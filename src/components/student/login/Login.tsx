@@ -55,6 +55,7 @@ function Login() {
       </button>
 
       <p>{error}</p>
+      
       <div className="forgotPassword">Forgot Password?</div>
     </div>
   );

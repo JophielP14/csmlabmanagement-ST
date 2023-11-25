@@ -1,3 +1,4 @@
+import './Teacher.css'
 import './App.css';
 import BorrowingForm from './components/student/BorrowingForm';
 import RequestConfirm from './components/student/requestConfirm/RequestConfirm';
@@ -13,7 +14,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RejectedView from './components/student/transactionView/rejectedView';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+import Dashboard from './components/teacher/Dashboard';
+import TPendingView from './components/teacher/PendingView';
+import TRejectedView from './components/teacher/RejectedView';
+import TAcceptedView from './components/teacher/AcceptedView';
+
 const queryClient = new QueryClient
+
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -22,6 +31,7 @@ function App() {
       
       <Routes>
 
+          {/* Student Views */}
           <Route path="/" element={<Login/>} />
           <Route path="/borrow-form" element={<BorrowingForm />} />
           <Route path='/request-confirm' element={<RequestConfirm />} />
@@ -48,6 +58,11 @@ function App() {
           <Route path="/Rejected/view/:id" element={<RejectedView/>} />
 
 
+          {/* Teacher Views*/}
+          <Route path="/Teacher/Dashboard" element={<Dashboard />} />
+          <Route path="/Teacher/transaction/:id" element={<TPendingView />} />
+          <Route path="/Teacher/transaction/rejected/:id" element={<TRejectedView />} />
+          <Route path="/Teacher/transaction/accepted/:id" element={<TAcceptedView />} />
 
       </Routes>
     </div>

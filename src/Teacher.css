@@ -1,0 +1,780 @@
+
+*{
+    text-decoration: none;
+  }.teacherContainer {
+    padding: 170px 40px 0px 40px; 
+  }
+  
+  .logoDako {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .UserPass {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  .formContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .InputField {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    padding: 5px 5px;
+  }
+  
+  .loginButton {
+    display: flex;
+    height: 34px;
+    padding: 9px 38px;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 5px;
+    background: #C8ECB8;
+  
+    color: #0A4610;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  .forgotPassword {
+    margin-top: 8px;
+  
+    color: #000;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  /* Dashboard Style */
+  .viewDashboard{
+    padding: 40px 26px 28px 26px;
+  }
+  
+  .header {
+    background-color: pink;
+  }
+  
+  .logocont {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Slogocsm {
+    width: 135px;
+    height: 24px;
+  }
+  
+  .firstRow {
+    display: flex;
+    width: 307px;
+    padding: 5px 0px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .profilecont {
+    display: flex;
+    align-items: center;
+    
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  .AccountLogo {
+    width: 31px;
+    height: 31px;
+  }
+  
+  .AccountLogo svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logoutcont {
+    display: flex;
+    padding: 0px 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    color: #1B4D1A;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .secondRow {
+    color: #1B4D1A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  
+    border-bottom: 2px solid #1B4D1A;
+    padding-bottom: 8px;
+  }
+  
+  .navigation {
+    display: flex;
+    padding: 2px 55px;
+    align-items: center;
+    margin-top: 12px;
+    gap: 66px;
+    justify-content: center;
+  }
+  
+  .buttonCont {
+    width: 68px;
+    height: 65px;
+  
+    display: flex;
+    width: 68px;
+    height: 65px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  
+    color: #1B4D1A;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  
+    border-radius: 10px;
+    background: rgba(178, 223, 171, 0.20);
+  }
+  .button-active {
+    width: 68px;
+    height: 65px;
+  
+    display: flex;
+    width: 68px;
+    height: 65px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  
+    color: #1B4D1A;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  
+    border-radius: 10px;
+    background: #B2DFAB;
+  }
+  
+  .navLogo {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .navLogo svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .navLabel {
+    margin-top: 10px;
+  }
+  
+  .transactionView{
+    margin-top: 25px;
+  
+  }
+  
+  .dropdown{
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+  }
+  .sectionFilterLabelCont{
+    margin-right: 10px;
+  }
+  
+  .transList {
+    margin-top: 10px;
+  }
+  
+  
+  .transactionContainer{
+    border-radius: 7px;
+    background: #CEE6C5;
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    flex-direction: column;
+    margin-bottom: 8px;
+  
+  }
+  
+  .transFirstRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+  
+  }
+  .transactionID{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    color: black
+  }
+  
+  .currentStatus{
+  
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 5px;
+    
+    
+  
+  }
+  
+  .iconCurrentStatus{
+    
+    color: #E1A304;
+   
+    display: flex;
+    align-items: center;
+    height: 5px;
+    width: 5px;
+    margin-right: 15px;
+    
+  }
+  
+  .iconCurrentStatus svg{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+    
+  }
+  
+  .penStatus{
+    color: #E1A304;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .rejStatus{
+    color: #db4444;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+  
+  
+  }
+  .accStatus{
+    color: #00360C;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+  
+  
+  }
+  .iconRejStatus{
+    color: #db4444;
+    display: flex;
+    align-items: center;
+    height: 5px;
+    width: 5px;
+    margin-right: 15px;
+  }
+  .iconRejStatus svg{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+  }
+  
+  .iconAccStatus{
+    color: #00360C;
+    display: flex;
+    align-items: center;
+    height: 5px;
+    width: 5px;
+    margin-right: 15px;
+  }
+  .iconAccStatus svg{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+  }
+  
+  
+  .transSecondRow{
+    color: #8F8F8F;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 10px;
+  
+  }
+  
+  .timeanddate{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .transThirdRow {
+      margin-top: 5px;
+      border-top: 1px solid rgba(160, 160, 160, 0.20);
+      padding: 5px 0px;
+      color: hsla(216, 2%, 42%, 1);
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 9px;
+      font-style: normal;
+      font-weight: 300;
+    
+    
+  }
+  
+  /* TransactionView */
+  
+  .viewContent{
+    background-color:rgba(234, 234, 234, 0.427);
+    overflow-y: auto;
+   
+  }
+  .headerView{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 22px 0px 22px;
+    
+  
+  }
+  .mainlogoView{
+    background-color: transparent;
+    border: none;
+    width: 160px;
+    height: 30px;
+   
+  
+  }
+  .viewArrowIcon{
+    height: 4px;
+    width: 4px;
+    
+  }
+  .customArrow{
+    background-color: transparent;
+    border: none;
+  }
+  
+  /*PV-2*/
+  .pendingHeaderText{
+    color: #00360C;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    height: 55px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: stretch;
+   
+    margin: 20px 15px 0px 15px;
+   
+  }
+  
+  .statusCont {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .viewStatusPending{
+   
+    display: flex;
+    padding: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px;
+    background: #FEFFCD;
+    color: #D9A92E;
+    text-align: center;
+   
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 20px 25px 0px 25px;
+   
+  }
+  
+  .viewStatusPending span{
+    color: #D9A92E;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    
+  }
+  
+  .viewStatusRejected{
+   
+    display: flex;
+    padding: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px;
+    background: #FFE9E9;
+    color: #360000;
+    text-align: center;
+   
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 20px 25px 0px 25px;
+   
+  }
+  
+  .viewStatusRejected span{
+    color: #360000;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    
+  }
+  
+  .viewStatusAccepted{
+   
+    display: flex;
+    padding: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px;
+    background: #B2DFAB;
+    color: #1B4D1A;
+    text-align: center;
+   
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 20px 25px 0px 25px;
+   
+  }
+  
+  .viewStatusAccepted span{
+    color:#1B4D1A;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    
+  }
+  .noteStatus {
+    align-self: stretch;
+  
+    color: #000;
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    margin: 2px 25px 0px 25px;
+  }
+  
+  .viewPaperContent{
+    padding: 10px 10px;
+    margin: 10px 25px;
+  
+    border-radius: 10px;
+    background: #FFF;
+  
+  }
+  
+  .titleID{
+    color: #000;
+    text-align: right;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+  }
+  .titleID span{
+    font-size: 21px;
+  }
+  .viewStudentInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 0px;
+  }
+  .iconProfileContainer{
+    width: 27px;
+    height: 27px;
+    margin-right: 4px;
+  }
+  .iconProfileContainer svg{
+    width: 100%;
+    height: 100%;
+   
+    
+  }
+  
+  .firstRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .student-details{
+    display: flex;
+    flex-direction: column;
+  }
+  .student-Name{
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .student-ID-Dept{
+    color: #000;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .viewTitleLabel{
+    color: #1E1A4D;
+  
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .viewItemsSelected{
+    border-top: 1px solid #A2A2A2;
+    border-bottom: 1px solid #A2A2A2;
+    display: flex;
+    padding: 10px 5px 0px 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+  
+  .viewMembersInfo {
+    border-top: 1px solid #A2A2A2;
+    display: flex;
+    padding: 10px 5px 0px 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+  
+  .viewAfterLabel{
+    display: flex;
+    padding: 10px 5px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+  
+    border-top: 1px solid #A2A2A2;
+  }
+  
+  .viewInst {
+    display: flex;
+    align-items: center;
+    
+    color: rgba(0, 0, 0, 0.80);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .viewStatusPending2 span {
+    color: #D9A92E;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  .viewStatusPending2 {
+    padding: 5px 10px 5px 10px;
+    align-items: center;
+    border-radius: 10px;
+    background: #FEFFCD;
+    color: #D9A92E;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    
+  }
+  .viewStatusAccepted2 span {
+    color: #1B4D1A;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  .viewStatusAccepted2 {
+    padding: 5px 10px 5px 10px;
+    align-items: center;
+    border-radius: 10px;
+    background: #B2DFAB;
+    color: #1B4D1A;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    
+  }
+  .viewStatusRejected2 {
+    padding: 5px 10px 5px 10px;
+    align-items: center;
+    border-radius: 10px;
+    background: #FFE9E9;
+    color: #360000;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .viewStatusRejected2 span {
+    color: #360000;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  .eachIndex{
+    margin-right: 15px;
+  }
+  .viewEachInfo{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: hsla(0, 0%, 0%, 0.7)
+  
+  }
+  
+  
+  
+  .totalQuantityLabel{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    margin: 10px 0px 15px 0px;
+  }
+  .totalQuantityLabel span{
+    color: #000;
+  
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .eachmemID{
+    margin-right: 10px;
+  }
+  
+  .approvedCont {
+    padding: 20px 0px 35px 0px;
+  }
+  
+  .viewEachInfo {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    margin-bottom: 10px;
+    
+  }
+  
+  
+  .viewDateTime{
+    
+    display: flex;
+    color: #8F8F8F;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 15px;
+    flex-direction: column;
+  }
+  .viewDate{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .viewTime{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .doneViewButton{
+    display: flex;
+    height: 43px;
+    padding: 9px 38px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #C8ECB8;
+    color: #134601;
+    text-align: center;
+  
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0px 15px 15px 15px;
+  
+  }
+  
+  .cancelViewButton{
+   
+    display: flex;
+    height: 43px;
+    padding: 9px 38px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #ECC4B8;
+    color: #460101;
+    text-align: center;
+  
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0px 15px 0px 15px;
+  
+  }
+  
+  .buttonsCont {
+    padding: 10px;
+    padding-bottom: 20px;
+  }
