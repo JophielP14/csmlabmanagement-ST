@@ -41,29 +41,31 @@
   color: #888;
 }
 
-
 /* Login Styles */
 
-  *{
-    text-decoration: none;
-  }
-
-input::-ms-reveal { 
-  display: none; 
+* {
+  text-decoration: none;
 }
 
-.logoContainer, .form-container, .fpContainer{
+input::-ms-reveal {
+  display: none;
+}
+
+.logoContainer,
+.form-container,
+.fpContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.mainlogo{
+.mainlogo {
   margin-top: 150px;
   margin-bottom: 100px;
 }
 
-.grouplogo, .logo{
+.grouplogo,
+.logo {
   bottom: 2px;
 }
 
@@ -71,22 +73,22 @@ input::-ms-reveal {
   margin-top: 30px;
   width: 300px;
   border: none;
-  background-color: #C8ECB8;
+  background-color: #c8ecb8;
   height: 34px;
-  color: #0A4610;
+  color: #0a4610;
   font-weight: bolder;
   border-radius: 5px;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.loginbtncontainer{
+.loginbtncontainer {
   margin-top: 30px;
 }
 
-.error-message{
+.error-message {
   margin-top: 10px;
   color: red;
   display: flex;
@@ -94,74 +96,69 @@ input::-ms-reveal {
   align-items: center;
 }
 
-.fpContainer{
+.fpContainer {
   margin-top: 10px;
 }
-.forgotpass{
+.forgotpass {
   text-decoration: none;
   color: black;
 }
 
-.labelButtonContainer{
+.labelButtonContainer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
-.removeButton{
+.removeButton {
   margin-right: 60px;
   background-color: transparent;
   border: none;
 }
 
-.removeButtonIcon{
+.removeButtonIcon {
   color: red;
 }
 
-.addButtonContainer{
+.addButtonContainer {
   justify-content: center;
   align-items: center;
   display: flex;
   margin-top: 20px;
 }
 
-.addBButton{
-  background-color: #5CBD10;
+.addBButton {
+  background-color: #5cbd10;
   border: none;
   border-radius: 8px;
   padding: 5px;
   padding-bottom: 4px;
   color: white;
-
 }
 
 /* End Login Page Styles */
 
-
-
 /* Forgot Password Styles */
 
-.backtoLoginBtn{
-  color: #C8ECB8;
+.backtoLoginBtn {
+  color: #c8ecb8;
 }
 
 /* Borrow Form Styles */
 
-.pageBody{
-
+.pageBody {
   align-items: center;
   justify-content: center;
   margin: 20px;
-  
 }
 
-.arrowButton{
+.arrowButton {
   background-color: transparent;
   border: none;
 }
 
-.headerContainer{
+.headerContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -169,15 +166,15 @@ input::-ms-reveal {
   margin: 20px;
 }
 
-.allFormContainer{
+.allFormContainer {
   display: flex;
   flex-direction: column;
   width: 30%;
   margin: auto;
 }
 
-.firstFormContainer{
-  background-color: #CEE7C5;
+.firstFormContainer {
+  background-color: #cee7c5;
   height: 160px;
   width: 95%;
   padding-top: 20px;
@@ -186,75 +183,74 @@ input::-ms-reveal {
   margin-bottom: 10px;
 }
 
-.qrButton{
+.qrButton {
   background-color: transparent;
   border: none;
 }
 
-label{
+label {
   margin-left: 20px;
 }
 
-.inputField{
+.inputField {
   background-color: white;
   margin-left: 20px;
   width: 85%;
 }
 
-.drop{
+.drop {
   margin-left: 20px;
   margin-top: 10px;
 }
 
-.selectform{
+.selectform {
   width: 89%;
 }
-.labelContain{
+.labelContain {
   margin-top: 10px;
 }
 
-.whatever{
+.whatever {
   margin-left: 0;
 }
 
-.firstfield{
+.firstfield {
   background-color: white;
   margin-left: 20px;
   width: 90%;
 }
 
-.quantityInput{
+.quantityInput {
   width: 20px;
   border: none;
   text-align: center;
 }
 
-.editQty{
+.editQty {
   border: 1px solid black;
   border-radius: 20px;
   width: 85px;
 }
 
-.btndecrement, .btnincrement{
+.btndecrement,
+.btnincrement {
   background-color: transparent;
   border: none;
 }
 
-.removeBtnLink{
+.removeBtnLink {
   background-color: transparent;
   text-decoration: underline;
   color: red;
   border: none;
 }
 
-
-
 /* Table Styles */
-.tableContainer1{
+.tableContainer1 {
   margin-top: 20px;
 }
 
-table{
+table {
   margin-left: 20px;
   text-align: center;
   width: 85%;
@@ -263,10 +259,10 @@ table{
   gap: 10px;
 }
 
-.yawa{
+.yawa {
   margin-top: 5px;
 }
-.headstyle{
+.headstyle {
   border-bottom: 1px solid #000;
 }
 
@@ -277,36 +273,36 @@ th {
   border-bottom: 1px solid #000; /* You can adjust the thickness and color */
 }
 
-td{
+td {
   border-collapse: collapse;
 }
 
-.totalItem{
+.totalItem {
   margin-left: 20px;
 }
 
-.errorMessage{
+.errorMessage {
   color: red;
   margin-left: 20px;
 }
 
-@media screen and (max-width: 900px){
-  .allFormContainer{
+@media screen and (max-width: 900px) {
+  .allFormContainer {
     width: 100%;
   }
 
-  .firstFormContainer{
+  .firstFormContainer {
     width: 100%;
   }
 
-  .firstfield{
+  .firstfield {
     width: 87%;
   }
 }
 
 /* Modal Styles */
-.modal{
-  background-color: #CFCFCF;
+.modal {
+  background-color: #cfcfcf;
   width: 80%;
   display: flex;
   height: 220px;
@@ -318,15 +314,14 @@ td{
   left: 50%;
   transform: translate(-50%, -50%);
   padding-bottom: 20px;
-
 }
 
-.btnsContainer{
+.btnsContainer {
   display: flex;
   flex-direction: row;
 }
 
-.qtyInputField{
+.qtyInputField {
   width: 250px;
   border: none;
   background-color: white;
@@ -336,23 +331,23 @@ td{
   padding-left: 10px;
 }
 
-.qrStyle{
+.qrStyle {
   height: 50%;
   width: 100%;
 }
 
-.addText{
-  color: #1E1A4D;
+.addText {
+  color: #1e1a4d;
 }
 
-.itemName{
-  color: #1E1A4D;
+.itemName {
+  color: #1e1a4d;
   font-weight: bolder;
 }
 
-.addQtyBtn{
-  background-color: #C8ECB8;
-  color: #0A4610;
+.addQtyBtn {
+  background-color: #c8ecb8;
+  color: #0a4610;
   font-weight: bolder;
   border: none;
   border-radius: 8px;
@@ -360,8 +355,8 @@ td{
   height: 43px;
   margin-right: 5px;
 }
-.cancelQtyBtn{
-  background-color: #ECC4B8;
+.cancelQtyBtn {
+  background-color: #ecc4b8;
   color: #460101;
   font-weight: bolder;
   border: none;
@@ -370,8 +365,8 @@ td{
   height: 43px;
 }
 
-@media screen and (min-width: 900px){
-  .modal{
+@media screen and (min-width: 900px) {
+  .modal {
     width: 316px;
   }
 }
@@ -379,7 +374,7 @@ td{
 
 /* Suggestion Box Styles */
 
-.liStyle{
+.liStyle {
   margin-bottom: 10px;
   margin-left: 1px;
   list-style-type: none;
@@ -387,10 +382,9 @@ td{
   padding-bottom: 10px;
   padding-left: 15px;
   width: 85%;
-
 }
 
-.suggestionBox{
+.suggestionBox {
   background-color: white;
   margin-left: 20px;
   width: 84%;
@@ -402,14 +396,13 @@ td{
   margin-bottom: 20px;
 }
 
-.btnsContainer1{
+.btnsContainer1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 20px;
   margin-left: 32px;
   width: 100%;
-
 }
 
 /* End of Suggestion Box Styles */
@@ -418,10 +411,9 @@ td{
 
 /* Forgot Password Styles */
 
-.forgotPassPageContainer{
+.forgotPassPageContainer {
   margin: 20px;
 }
-
 
 .contentContainer {
   display: flex;
@@ -434,31 +426,30 @@ td{
   text-align: left; /* Align the content inside 'content' to the left */
 }
 
-.hText{
-  color: #1E1A4D;
+.hText {
+  color: #1e1a4d;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-label{
+label {
   text-align: left !important;
 }
 
-
-.requestButton{
+.requestButton {
   width: 309px;
   height: 41px;
   border: none;
   border-radius: 5px;
-  background-color: #77C777;
-  color: #0A4610;
+  background-color: #77c777;
+  color: #0a4610;
   font-weight: bolder;
 }
 
 /* Request Confirm Styles */
 
-.requestConfirmPage{
+.requestConfirmPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -467,7 +458,7 @@ label{
   gap: 20px;
 }
 
-.requestDesc{
+.requestDesc {
   text-align: center;
   font-size: 16px;
   text-wrap: balance;
@@ -475,9 +466,8 @@ label{
   margin-right: 20px;
 }
 
-
-.reqBtn{
-  background-color: #C8ECB8;
+.reqBtn {
+  background-color: #c8ecb8;
   font-weight: bolder;
   color: #134601;
   border: none;
@@ -486,8 +476,8 @@ label{
   height: 48px;
 }
 
-.seeLiveBtn{
-  background-color: #C8ECB8;
+.seeLiveBtn {
+  background-color: #c8ecb8;
   font-weight: bolder;
   color: #134601;
   border: none;
@@ -496,8 +486,8 @@ label{
   height: 48px;
 }
 
-.cancelBtn{
-  background-color: #ECC4B8;
+.cancelBtn {
+  background-color: #ecc4b8;
   font-weight: bolder;
   color: #460101;
   border: none;
@@ -507,79 +497,70 @@ label{
   margin-bottom: 10px;
 }
 
-.backToHomeBtn{
+.backToHomeBtn {
   background-color: white;
-  border: 1px solid #C8ECB8;
+  border: 1px solid #c8ecb8;
   color: #134601;
   font-weight: bolder;
   width: 380px;
   border-radius: 10px;
   height: 48px;
-
 }
 
-@media screen and (max-width: 450px){
-  .seeLiveBtn{
+@media screen and (max-width: 450px) {
+  .seeLiveBtn {
     width: 290px;
   }
 
-  .backToHomeBtn{
+  .backToHomeBtn {
     width: 290px;
   }
 }
-
 
 /* DASHBOARD STYLE*/
-.logocontainerD{
+.logocontainerD {
   margin: 40px 10px 10px 10px;
- 
+
   width: calc(100% - 20px);
   display: flex;
   justify-content: center;
-  
 }
 
-.DashboardContent{
+.DashboardContent {
   margin-left: 10px;
   margin-right: 10px;
-
 }
-@media screen and (min-width: 900px){
-  .DashboardContent{
+@media screen and (min-width: 900px) {
+  .DashboardContent {
     width: 900px;
-    
-    margin: 0 auto;
 
+    margin: 0 auto;
   }
-  .viewContent{
+  .viewContent {
     width: 900px;
     height: 570px;
     margin: 0 auto;
   }
 }
-.firstContent{
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   margin-left: 20px;
-   margin-right: 20px;
-   justify-content: space-between;
-   margin-top: 10px;
+.firstContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.leftlabel{
-  
+.leftlabel {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.leftlabelstudent{
- 
+.leftlabelstudent {
   height: 32px;
   margin-left: 3px;
-
 }
-.iconContainer{
-  
+.iconContainer {
   height: 34px;
   width: 34px;
 }
@@ -587,26 +568,21 @@ label{
   /* Adjust the size of the icon to fit within the container */
   width: 100%;
   height: 100%;
-  color:hsla(144, 31%, 12%, 1)
+  color: hsla(144, 31%, 12%, 1);
 }
-.idNumber{
- 
+.idNumber {
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
 }
-.status{
-  
+.status {
   font-size: 11px;
   font-style: normal;
 }
-.status span{
-  color: #45A54E;
-
-  
+.status span {
+  color: #45a54e;
 }
-.rightlabel{
-  
+.rightlabel {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -614,26 +590,24 @@ label{
   height: 37px;
   justify-content: flex-end;
 }
-.logoutIcon{
+.logoutIcon {
   margin: 0px;
   height: 12px;
   width: 12px;
-  color: #1B4D1A;
+  color: #1b4d1a;
 }
-.rightText{
-  color: #1B4D1A;
+.rightText {
+  color: #1b4d1a;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
 }
 
-
 /* 
 D-2C*/
 
-
-.dashboardLabel{
-  color: #1B4D1A;
+.dashboardLabel {
+  color: #1b4d1a;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 10px;
@@ -641,19 +615,19 @@ D-2C*/
   font-style: normal;
   font-weight: 700;
   padding-bottom: 5px;
-  border-bottom: 2px solid #1B4D1A;
+  border-bottom: 2px solid #1b4d1a;
 }
 /* 
 D-3C */
-.borrowItemsButton{
+.borrowItemsButton {
   margin-left: 20px;
   margin-right: 20px;
-  
+
   border-radius: 10px;
-  background: #CDF;
+  background: #cdf;
 
   margin-top: 20px;
-  color: #25639D;
+  color: #25639d;
   text-align: center;
   font-size: 11px;
   font-style: normal;
@@ -661,14 +635,11 @@ D-3C */
   padding: 15px 38px;
   display: flex;
   justify-content: center;
-  
-  
 }
 
 /* D-4C */
 
-.buttonsView{
-
+.buttonsView {
   padding: 5px 0px;
   margin-left: 20px;
   margin-right: 20px;
@@ -678,12 +649,10 @@ D-3C */
   margin-bottom: 25px;
 
   overflow-x: scroll;
-  
 }
 
-
-.buttonItemsStatus{
-  background-color:hsla(112, 45%, 77%, 0.306);
+.buttonItemsStatus {
+  background-color: hsla(112, 45%, 77%, 0.306);
   margin-right: 10px;
   display: flex;
   width: 84px;
@@ -692,24 +661,20 @@ D-3C */
   flex-direction: column;
   border: none;
   font-size: 11px;
-  align-items: center;          
+  align-items: center;
   border-radius: 10px;
   color: hsla(119, 50%, 20%, 1);
   min-width: 68px;
 }
 
-@media screen and (max-width: 360px){
-  .buttonItemsStatus{
+@media screen and (max-width: 360px) {
+  .buttonItemsStatus {
     font-size: 9px;
     align-items: center;
   }
-  }
+}
 
-
-
-
-
-.button-active{
+.button-active {
   background-color: rgb(54, 110, 7);
   border: none;
   margin-right: 10px;
@@ -722,11 +687,10 @@ D-3C */
   font-weight: 700;
   align-items: center;
   border-radius: 10px;
-  background: #B2DFAB;
-  color: hsla(119, 50%, 20%, 1)
+  background: #b2dfab;
+  color: hsla(119, 50%, 20%, 1);
 }
-.iconStatus{
- 
+.iconStatus {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -735,135 +699,127 @@ D-3C */
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.iconStatus svg{
-  
-
+.iconStatus svg {
   width: 100%;
   height: 100%;
-  color: hsla(119, 50%, 20%, 1)
-  
+  color: hsla(119, 50%, 20%, 1);
 }
 /* D-5C */
 
-.transactionView{
+.transactionView {
   margin-top: 15px;
-
-
 }
-.transactionContainer{
+.transactionContainer {
   border-radius: 7px;
-  background: #CEE6C5;
+  background: #cee6c5;
   display: flex;
   padding: 10px 10px 0px 10px;
   flex-direction: column;
   margin-bottom: 2px;
   text-decoration: none;
-
 }
-.transactionContainerBreakage{
-  background-color: #FFE9E9;
+.transactionContainerBreakage {
+  background-color: #ffe9e9;
   border-radius: 7px;
- 
+
   display: flex;
   padding: 10px 10px 0px 10px;
   flex-direction: column;
   margin-bottom: 8px;
 }
-.transactionFirstRow{
+.transactionFirstRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-
 }
-.transactionID{
+.transactionID {
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  color: black
-  
-  
+  color: black;
 }
-.transactionStatusContainer{
-
-
+.transactionStatusContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 5px;
-  
-  
-
 }
 
-.iconReturning, .iconPending{
-  
-  color: #E1A304; 
+.iconReturning,
+.iconPending {
+  color: #e1a304;
   display: flex;
   align-items: center;
   height: 5px;
   width: 5px;
   margin-right: 15px;
-  
 }
 
-.iconApproved, .iconCompleted, .iconResolved{
-  color: #00360C;
+.iconApproved,
+.iconCompleted,
+.iconResolved {
+  color: #00360c;
 
   display: flex;
   align-items: center;
   height: 5px;
   width: 5px;
   margin-right: 15px;
-  
 }
-.iconBreakage, .iconRejected{
-  
+.iconBreakage,
+.iconRejected {
   color: #360000;
   display: flex;
   align-items: center;
   height: 5px;
   width: 5px;
   margin-right: 15px;
-  
 }
-.iconReturning svg, .iconPending svg, .iconApproved svg, .iconCompleted svg, .iconResolved svg, .iconBreakage svg, .iconRejected svg {
+.iconReturning svg,
+.iconPending svg,
+.iconApproved svg,
+.iconCompleted svg,
+.iconResolved svg,
+.iconBreakage svg,
+.iconRejected svg {
   width: 100%;
   height: 100%;
   margin-right: 10px;
-  
 }
-.itemPendingStatusText, .itemReturningStatusText{
-  color: #E1A304;
+.itemPendingStatusText,
+.itemReturningStatusText {
+  color: #e1a304;
   font-size: 11px;
   font-style: normal;
   font-weight: 600;
 }
 
-.itemCompletedStatusText, .itemResolvedStatusText, .itemApprovedStatusText, .itemResolvedStatusText{
+.itemCompletedStatusText,
+.itemResolvedStatusText,
+.itemApprovedStatusText,
+.itemResolvedStatusText {
   color: hsla(126, 58%, 21%, 1);
   font-size: 11px;
   font-style: normal;
   font-weight: 600;
 }
-.itemBreakageStatusText{
- 
+.itemBreakageStatusText {
   font-size: 11px;
   color: #d26767;
 
   font-style: normal;
   font-weight: 600;
 }
-.itemRejectedStatusText{
+.itemRejectedStatusText {
   color: #cd3d3d;
   font-size: 11px;
   font-style: normal;
   font-weight: 600;
 }
 
-.transactionSecondRow{
-  color: #8F8F8F;
+.transactionSecondRow {
+  color: #8f8f8f;
   font-size: 11px;
   font-style: italic;
   font-weight: 400;
@@ -871,93 +827,83 @@ D-3C */
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 10px;
-
 }
-.timeanddate{
+.timeanddate {
   display: flex;
   flex-direction: column;
 }
-.pendingCancel{
+.pendingCancel {
   border-radius: 5px;
-  background: #E6C5C5;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.10);
+  background: #e6c5c5;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   padding: 5px 20px;
   justify-content: center;
   align-items: center;
-  color: #4D1A1A;
+  color: #4d1a1a;
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
 }
-.obReturn{
-  background-color: #FFECA7;
+.obReturn {
+  background-color: #ffeca7;
   border-radius: 5px;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   padding: 5px 20px;
   justify-content: center;
   align-items: center;
-  color: #4D1A1A;
+  color: #4d1a1a;
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
 }
 .transactionThirdRow {
-    margin-top: 5px;
-    border-top: 1px solid rgba(160, 160, 160, 0.20);
-    padding: 5px 0px;
-    color: hsla(216, 2%, 42%, 1);
-    text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 9px;
-    font-style: normal;
-    font-weight: 300;
-  
-  
+  margin-top: 5px;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 5px 0px;
+  color: hsla(216, 2%, 42%, 1);
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 300;
 }
 
 /* PENDING VIEW STYLE*/
 
-.viewContent{
-  background-color:rgba(234, 234, 234, 0.427);
+.viewContent {
+  background-color: rgba(234, 234, 234, 0.427);
   max-height: 900px;
   overflow-y: auto;
-
- 
 }
 
-.headerView{
+.headerView {
   display: flex;
   justify-content: space-between;
   margin: 30px 22px 0px 22px;
-  
-
 }
-.mainlogoView{
-
+.mainlogoView {
   width: 160px;
   height: 30px;
- 
-
 }
-.customArrowLink{
-  color:#000
+.customArrowLink {
+  color: #000;
 }
-.customArrowLink:active{
+.customArrowLink:active {
   text-decoration: none;
-  color: #000; 
-  outline: none; 
+  color: #000;
+  outline: none;
   box-shadow: none;
 }
-.viewArrowIcon{
+.viewArrowIcon {
   height: 4px;
   width: 4px;
 }
-.transaction-header-note{
+.transaction-header-note {
   color: #360000;
 
   font-size: 10px;
@@ -967,12 +913,13 @@ D-3C */
   display: flex;
   justify-content: flex-end;
   margin: 3px 25px 0px 25px;
-
 }
 
 /*PV-2*/
-.pendingHeaderText, .returnCompleteHeaderText, .returnCheckingHeaderText{
-  color: #00360C;
+.pendingHeaderText,
+.returnCompleteHeaderText,
+.returnCheckingHeaderText {
+  color: #00360c;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -983,72 +930,68 @@ D-3C */
   justify-content: center;
   flex-shrink: 0;
   align-self: stretch;
- 
+
   margin: 20px 15px 0px 15px;
- 
 }
 
-.pendingBar, .returnCompletedBar{
+.pendingBar,
+.returnCompletedBar {
   margin: 10px 25px 0px 25px;
   height: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  
 }
 
- .checkMarkPoint{
-  width: 19px; 
+.checkMarkPoint {
+  width: 19px;
   height: 19px;
-  background-color: hsla(119, 38%, 44%, 1); 
+  background-color: hsla(119, 38%, 44%, 1);
   border: 2px solid rgb(2, 71, 2);
-  border-radius: 50%; 
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 10px;
   font-weight: bold;
-  color: rgb(255, 255, 255); 
-
-} 
- .checkMarkPoint svg{
+  color: rgb(255, 255, 255);
+}
+.checkMarkPoint svg {
   color: white;
   font-size: 15px;
   font-weight: 700;
-
 }
 .checkMark {
-  width: 19px; 
+  width: 19px;
   height: 19px;
-  background-color: transparent; 
-  border: 2px solid green; 
-  border-radius: 50%; 
+  background-color: transparent;
+  border: 2px solid green;
+  border-radius: 50%;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: green; 
-
+  color: green;
 }
-.lineIcon{
+.lineIcon {
   width: 148px;
   height: 2px;
   display: flex;
-  flex:1;
+  flex: 1;
   background: #036901;
 }
-.dashIcon{
+.dashIcon {
   border: 1px dashed green;
-  width:145px;
-  display:flex;
+  width: 145px;
+  display: flex;
   flex: 1;
-
-} 
-.pendingBarTxt, .returnBarTxt{
+}
+.pendingBarTxt,
+.returnBarTxt {
   height: 20px;
- 
+
   margin: 7px 24px 0px 24px;
   display: flex;
   justify-content: space-between;
@@ -1057,43 +1000,44 @@ D-3C */
   font-size: 8px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal
+  line-height: normal;
 }
-.viewStatusPending, .viewStatusReturnChecking{
- 
+.viewStatusPending,
+.viewStatusReturnChecking {
   display: flex;
   padding: 5px;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  background: #FEFFCD;
-  color: #D9A92E;
+  background: #feffcd;
+  color: #d9a92e;
   text-align: center;
- 
+
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
   margin: 20px 25px 0px 25px;
- 
 }
-.viewStatusOnBorrow, .viewStatusReturnComplete{
+.viewStatusOnBorrow,
+.viewStatusReturnComplete {
   display: flex;
   padding: 5px;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  color: #00360C;
+  color: #00360c;
   text-align: center;
- 
+
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
   margin: 20px 25px 0px 25px;
-  background: #D9FFD8;
+  background: #d9ffd8;
 }
-.viewStatusBreakage, .viewStatusRed{
+.viewStatusBreakage,
+.viewStatusRed {
   display: flex;
   padding: 5px;
   justify-content: flex-end;
@@ -1102,44 +1046,42 @@ D-3C */
   border-radius: 10px;
   color: hsla(0, 100%, 11%, 1);
   text-align: center;
- 
+
   font-size: 11px;
 
   margin: 20px 25px 0px 25px;
-  background: #FFE9E9;
-
+  background: #ffe9e9;
 }
-.viewStatusOnBorrow span, .viewStatusReturnComplete span{
-  color: #00360C;
+.viewStatusOnBorrow span,
+.viewStatusReturnComplete span {
+  color: #00360c;
   text-align: center;
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
-  
 }
-.viewStatusPending span, .viewStatusReturnChecking span{
-  color: #D9A92E;
+.viewStatusPending span,
+.viewStatusReturnChecking span {
+  color: #d9a92e;
   text-align: center;
   font-size: 11px;
-  
+
   font-weight: 700;
-  
 }
-.viewStatusBreakage span{
+.viewStatusBreakage span {
   color: #360000;
   text-align: center;
   font-size: 11px;
   font-weight: 700;
-
 }
-.viewPaperContent{
+.viewPaperContent {
   background-color: rgb(255, 255, 255);
   padding: 10px 10px;
   margin: 10px 25px;
 
   border-radius: 12px;
 }
-.titleID{
+.titleID {
   color: #000;
   text-align: right;
   font-size: 15px;
@@ -1148,56 +1090,50 @@ D-3C */
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
-  
 }
-.titleID span{
+.titleID span {
   font-size: 21px;
 }
-.firstRow{
+.firstRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.viewStudentInfo{
+.viewStudentInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 15px 0px;
 }
-.iconProfileContainer{
+.iconProfileContainer {
   width: 27px;
   height: 27px;
   margin-right: 4px;
 }
-.iconProfileContainer svg{
+.iconProfileContainer svg {
   width: 100%;
   height: 100%;
- 
-  
 }
-.student-details{
+.student-details {
   display: flex;
   flex-direction: column;
 }
-.student-Name{
+.student-Name {
   color: #000;
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
 }
-.student-ID-Dept{
+.student-ID-Dept {
   color: #000;
   font-size: 9px;
   font-style: normal;
   font-weight: 400;
 }
 
-
-
-.viewTitleLabel{
-  color: #1E1A4D;
+.viewTitleLabel {
+  color: #1e1a4d;
 
   font-size: 15px;
   font-style: normal;
@@ -1206,16 +1142,12 @@ D-3C */
   margin-bottom: 15px;
 }
 
-
-.viewItemsSelected{
-  border-top: 1px solid #A2A2A2;
-  border-bottom: 1px solid #A2A2A2;
+.viewItemsSelected {
+  border-top: 1px solid #a2a2a2;
+  border-bottom: 1px solid #a2a2a2;
   display: flex;
   padding: 10px 5px 0px 5px;
   flex-direction: column;
-
- 
-  
 }
 
 .firstRow {
@@ -1227,59 +1159,51 @@ D-3C */
   width: 100%;
 }
 
-.viewAfterLabel{
-  border-top: 1px solid #A2A2A2;
+.viewAfterLabel {
+  border-top: 1px solid #a2a2a2;
   display: flex;
   padding: 10px 5px 0px 5px;
   flex-direction: column;
-
-
 }
-
 
 .approvedCont {
   padding: 20px 0px 35px 0px;
 }
 
-
-
-.eachIndex{
+.eachIndex {
   margin-right: 15px;
 }
-.eachItemDetails{
+.eachItemDetails {
   display: flex;
   flex-direction: row;
 }
 
-.viewEachInfo{
+.viewEachInfo {
   margin-top: 5px;
   display: flex;
   flex-direction: row;
   font-size: 12px;
   margin-bottom: 15px;
-  color: hsla(0, 0%, 0%, 0.7)
-
+  color: hsla(0, 0%, 0%, 0.7);
 }
-.viewItemLeft{
+.viewItemLeft {
   margin-top: 0px;
   display: flex;
   flex-direction: row;
   font-size: 12px;
   margin-bottom: 15px;
   color: hsla(0, 0%, 0%, 0.7);
- 
 }
-.viewEachBreakage{
- 
+.viewEachBreakage {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 5px;
   margin-bottom: 5px;
 
- align-items: center;
+  align-items: center;
 }
-.totalQuantityLabel{
+.totalQuantityLabel {
   display: flex;
   flex-direction: row;
   font-size: 12px;
@@ -1288,21 +1212,20 @@ D-3C */
   align-items: center;
   margin: 10px 0px 15px 0px;
 }
-.totalQuantityLabel span{
+.totalQuantityLabel span {
   color: #000;
 
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
 }
-.eachmemID{
+.eachmemID {
   margin-right: 10px;
 }
 
-.viewDateTime{
-  
+.viewDateTime {
   display: flex;
-  color: #8F8F8F;
+  color: #8f8f8f;
   font-size: 10px;
   font-style: italic;
   font-weight: 400;
@@ -1310,22 +1233,22 @@ D-3C */
   margin-top: 15px;
   flex-direction: column;
 }
-.viewDate{
+.viewDate {
   display: flex;
   justify-content: flex-end;
 }
-.viewTime{
+.viewTime {
   display: flex;
   justify-content: flex-end;
 }
-.doneViewButton{
+.doneViewButton {
   display: flex;
   height: 43px;
   padding: 9px 38px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: #C8ECB8;
+  background: #c8ecb8;
   color: #134601;
   text-align: center;
 
@@ -1333,18 +1256,16 @@ D-3C */
   font-style: normal;
   font-weight: 700;
   margin: 0px 15px 15px 15px;
-
 }
 
-.cancelViewButton{
- 
+.cancelViewButton {
   display: flex;
   height: 43px;
   padding: 9px 38px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: #ECC4B8;
+  background: #ecc4b8;
   color: #460101;
   text-align: center;
 
@@ -1352,18 +1273,15 @@ D-3C */
   font-style: normal;
   font-weight: 700;
   margin: 0px 15px 0px 15px;
-
 }
-
 
 /* on borrow confirmation */
 
-.viewConfirmation{
-  background-color:rgba(234, 234, 234, 0.427);
-  margin: 0px 25px 0px 25px
+.viewConfirmation {
+  background-color: rgba(234, 234, 234, 0.427);
+  margin: 0px 25px 0px 25px;
 }
-.confirmationTxt{
- 
+.confirmationTxt {
   color: #000;
   text-align: justify;
   font-size: 12px;
@@ -1371,19 +1289,18 @@ D-3C */
   font-weight: 400;
   margin-left: 10px;
 }
-.confirmationTxt span{
+.confirmationTxt span {
   font-weight: 700;
 }
-.customCircle{
-  color: #000000B2;
-
+.customCircle {
+  color: #000000b2;
 }
-.firstRowConfirm{
+.firstRowConfirm {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.returnViewButton{
+.returnViewButton {
   display: flex;
   height: 43px;
   padding: 9px 38px;
@@ -1392,56 +1309,45 @@ D-3C */
   gap: 10px;
   align-self: stretch;
   border-radius: 10px;
-  background: rgba(154, 154, 154, 0.40);
+  background: rgba(154, 154, 154, 0.4);
   margin-top: 10px;
   margin-bottom: 10px;
 
-  color: #5C5C5C;
+  color: #5c5c5c;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-
-
-
 }
-.returnViewButton.active{
-  background-color: #C8ECB8;
+.returnViewButton.active {
+  background-color: #c8ecb8;
   color: #134601;
 }
 /*breakage details*/
 
-.breakageContainer{
+.breakageContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
+
   align-items: flex-end;
-  padding-right:  10px;
-  
- 
+  padding-right: 10px;
 }
-.breakageDetails{
- 
+.breakageDetails {
   display: flex;
- justify-content: flex-end;
- align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   font-weight: 700;
   font-size: 14px;
   color: hsla(0, 100%, 11%, 1);
- 
- 
-  
 }
-.breakageLabel{
+.breakageLabel {
   margin-left: 30px;
-  background: #FFE9E9;   
+  background: #ffe9e9;
   border-radius: 10px;
   padding: 3px 6px;
   color: hsla(0, 100%, 11%, 1);
-  
- 
 }
-.iconBreakageView{
+.iconBreakageView {
   height: 2px;
   width: 2px;
   color: hsla(0, 100%, 11%, 1);
@@ -1450,85 +1356,79 @@ D-3C */
   display: flex;
   flex-direction: row;
   align-items: center;
-  
-} 
-.iconBreakageView svg{
+}
+.iconBreakageView svg {
   height: 5px;
   width: 5px;
   margin-right: 10px;
 }
-.breakageItemNote{
+.breakageItemNote {
   color: #360000;
 
   font-size: 10px;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
-
-
 }
-.breakageReplacedLabel{
+.breakageReplacedLabel {
   margin-left: 70px;
-  background: #D9FFD8;
+  background: #d9ffd8;
   border-radius: 10px;
   padding: 3px 6px;
-  color: #00360C;
-  
- 
+  color: #00360c;
 }
 /*replaced*/
 
-.breakageCompleteDetails{
-  color: #00360C;
+.breakageCompleteDetails {
+  color: #00360c;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-weight: 700;
   font-size: 14px;
 }
-.iconBreakageReplacedView{
+.iconBreakageReplacedView {
   height: 2px;
   width: 2px;
-  color: #00360C;
-  
+  color: #00360c;
+
   margin-right: 10px;
   margin-left: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.iconBreakageReplacedView svg{
+.iconBreakageReplacedView svg {
   height: 5px;
   width: 5px;
   margin-right: 10px;
 }
-.breakageCompleteItemNote{
-  color: #00360C;
+.breakageCompleteItemNote {
+  color: #00360c;
   font-size: 10px;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
-
 }
 
-footer{
+footer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  bottom: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 0;
+bottom: 10px;
 } */
 
-.tableHeadContainer{
+.tableHeadContainer {
   border-bottom: solid 1px black;
 }
 
-.totalContain{
+.totalContain {
   margin-right: 10px;
 }
