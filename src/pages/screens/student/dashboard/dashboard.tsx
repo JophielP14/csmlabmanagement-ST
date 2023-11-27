@@ -1,4 +1,4 @@
-import header from "../../assets/headerlogo.png";
+import header from "../../../../components/assets/headerlogo.png";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";

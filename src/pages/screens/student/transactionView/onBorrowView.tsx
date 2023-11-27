@@ -1,21 +1,25 @@
-import header from '../../assets/headerlogo.png'
 
+import header from '../../../../components/assets/headerlogo.png'
+import { Link } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { useState } from 'react';
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-import CheckIcon from '@mui/icons-material/Check'; 
+function OnBorrowView() {
+  const [isChecked, setIsChecked] = useState(false);
 
-import { Link } from 'react-router-dom';
+  const handleCheckClick = () => {
+    setIsChecked(!isChecked);
+  };
 
-
-function ReturnCheckingView() {
-  const returnCheckingItems = [
+  const pendingItems = [
     {
       id: 1034,
       date: "August 19, 2023",
       time: "9:00am",
-      status: "Return",
+      status: "On-borrow",
       items: [
         { name: "Petri Dishes", quantity: 3, breakage: 1 },
         { name: "Graduated Cylinder", quantity: 6, breakage: 3 },
@@ -62,39 +66,16 @@ function ReturnCheckingView() {
   return (
     <div className="viewContent">
       <div className="headerView">
-        <Link to="/returning" className="customArrowLink">
+        <Link to="/on-borrow" className="customArrowLink">
           <KeyboardBackspaceIcon className="viewArrowIcon" />
         </Link>
         <img src={header} alt="Header Logo" className="mainlogoView" />
       </div>
 
-      <div className="returnCheckingHeaderText">
-        Proceed to Lab technician <br />
-        and turn-in the equipment.
-      </div>
-
-      <div className="returnCompletedBar">
-        <div className="checkMarkPoint">
-          <CheckIcon />
-        </div>
-        <div className="lineIcon"></div>
-        <div className="checkMark" />
-        <div className="dashIcon"></div>
-        <div className="checkMark" />
-      </div>
-      <div className="returnBarTxt">
-        <div className="barLabel"> Submitted</div>
-        <div className="barLabel"> Checking </div>
-        <div className="barLabel"> Complete </div>
-      </div>
-
-      {returnCheckingItems.map((item) => (
+      {pendingItems.map((item) => (
         <div className="papercontentStatus">
-          <div className="viewStatusReturnChecking">
-            Status:
-            <span>
-              {item.status} - turn-in the equipment and have it check{" "}
-            </span>
+          <div className="viewStatusOnBorrow">
+            Status:<span>{item.status} </span>
           </div>
 
           <div className="viewPaperContent">
@@ -189,10 +170,45 @@ function ReturnCheckingView() {
               <div className="viewTime">{item.time}</div>
             </div>
           </div>
+
+          <div className="viewConfirmation">
+            <div className="firstRowConfirm">
+              <div
+                className={`checkIconButton ${isChecked ? "checked" : ""}`}
+                onClick={handleCheckClick}
+              >
+                {isChecked ? (
+                  <CheckCircleOutlineIcon
+                    className="customeCircle"
+                    sx={{ stroke: "white", strokeWidth: 1 }}
+                  />
+                ) : (
+                  <CircleOutlinedIcon
+                    className="customeCircle"
+                    sx={{ stroke: "white", strokeWidth: 1 }}
+                  />
+                )}
+              </div>
+              <div className="confirmationTxt">
+                I certify that the above item(s) wil be <span> returned</span>{" "}
+                in good condition.
+              </div>
+            </div>
+
+            <div>
+              {isChecked ? (
+                <Link to="/pending">
+                  <div className="returnViewButton active">Return</div>
+                </Link>
+              ) : (
+                <div className="returnViewButton">Return</div>
+              )}
+            </div>
+          </div>
         </div>
       ))}
     </div>
   );
 }
 
-export default ReturnCheckingView;
+export default OnBorrowView;

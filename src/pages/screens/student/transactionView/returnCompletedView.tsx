@@ -1,10 +1,8 @@
 
-import header from '../../assets/headerlogo.png'
+import header from '../../../../components/assets/headerlogo.png'
 
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { useState } from 'react';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import { Link } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check'; 
 

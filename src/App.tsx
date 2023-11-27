@@ -1,23 +1,29 @@
 import './App.css';
-import BorrowingForm from './components/student/BorrowingForm';
-import RequestConfirm from './components/student/requestConfirm/RequestConfirm';
-import Login from './components/student/login/Login';
-import DashboardScreen from './components/student/dashboard/dashboard';
-import PendingView from './components/student/transactionView/pendingView';
-import OnBorrowView from './components/student/transactionView/onBorrowView';
-import ReturnCompletedView from './components/student/transactionView/returnCompletedView';
-import ReturnCheckingView from './components/student/transactionView/returnCheckingView';
-import BreakageView from './components/student/transactionView/breakageView';
-import BreakageCompletedView from './components/student/transactionView/breakageCompletedView';
+
+import Login from './pages/screens/student/login/Login';
+import BorrowingForm from './pages/screens/student/borrowForm/BorrowingForm';
+import RequestConfirm from './pages/screens/student/requestConfirm/RequestConfirm';
+import DashboardScreen from './pages/screens/student/dashboard/dashboard';
+import PendingView from './pages/screens/student/transactionView/pendingView';
+import OnBorrowView from './pages/screens/student/transactionView/onBorrowView';
+import BreakageView from './pages/screens/student/transactionView/breakageView';
+import BreakageCompletedView from './pages/screens/student/transactionView/breakageCompletedView';
+import ReturnCheckingView from './pages/screens/student/transactionView/returnCheckingView';
+import ReturnCompletedView from './pages/screens/student/transactionView/returnCompletedView';
+import RejectedView from './pages/screens/student/transactionView/rejectedView';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RejectedView from './components/student/transactionView/rejectedView';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import Dashboard from './components/teacher/Dashboard';
-import TPendingView from './components/teacher/PendingView';
-import TRejectedView from './components/teacher/RejectedView';
-import TAcceptedView from './components/teacher/AcceptedView';
+import Dashboard from './pages/screens/teacher/teacherDashboard/Dashboard';
+import TPendingView from './pages/screens/teacher/teacherPendingView/PendingView';
+import TRejectedView from './pages/screens/teacher/teacherRejectedView/RejectedView';
+import TAcceptedView from './pages/screens/teacher/teacherAcceptedView/AcceptedView';
+
+
+
+
 
 const queryClient = new QueryClient
 

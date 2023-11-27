@@ -1,6 +1,5 @@
-import * as React from "react";
-import BorrowLogo from "../../assets/BorrowLogo.png";
-import Check from "../../assets/check.png";
+import BorrowLogo from "../../../../components/assets/headerlogo.png";
+import Check from "../../../../components/assets/check.png";
 import { Link } from "react-router-dom";
 
 function RequestConfirm() {

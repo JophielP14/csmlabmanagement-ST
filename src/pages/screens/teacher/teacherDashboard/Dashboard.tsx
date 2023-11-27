@@ -1,4 +1,4 @@
-import Slogocsm from "../assets/headerlogo.png";
+import Slogocsm from "../../../../components/assets/headerlogo.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
@@ -7,16 +7,10 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { TransactionsAPI } from "./../API";
-import { TransactionType } from "./../Types";
+import { TransactionsAPI } from "../../API";
+import { TransactionType } from "../../Types";
 
-interface Transaction {
-  id: number;
-  timestamp: string;
-  time: string;
-  status: string;
-  section: string;
-}
+// deleted inteface transaction types
 
 function Dashboard() {
   const [selectedItem, setSelectedItem] = useState("Pending");
