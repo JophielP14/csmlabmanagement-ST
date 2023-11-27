@@ -1,4 +1,3 @@
-import './Teacher.css'
 import './App.css';
 import BorrowingForm from './components/student/BorrowingForm';
 import RequestConfirm from './components/student/requestConfirm/RequestConfirm';
