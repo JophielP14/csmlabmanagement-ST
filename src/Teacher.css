@@ -232,12 +232,6 @@
   
   
   }
-  .transactionID{
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    color: black
-  }
   
   .currentStatus{
   
@@ -532,11 +526,7 @@
     align-items: center;
     margin: 15px 0px;
   }
-  .iconProfileContainer{
-    width: 27px;
-    height: 27px;
-    margin-right: 4px;
-  }
+  
   .iconProfileContainer svg{
     width: 100%;
     height: 100%;
