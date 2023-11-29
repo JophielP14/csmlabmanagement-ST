@@ -1,4 +1,4 @@
-import Slogocsm from "../../../../components/assets/headerlogo.png"
+import Slogocsm from "../../../../assets/headerlogo.png"
 
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';

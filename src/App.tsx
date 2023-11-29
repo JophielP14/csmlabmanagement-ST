@@ -1,11 +1,11 @@
 import './App.css';
 
-import Login from './pages/screens/student/login/Login';
-import BorrowingForm from './pages/screens/student/borrowForm/BorrowingForm';
-import RequestConfirm from './pages/screens/student/requestConfirm/RequestConfirm';
-import DashboardScreen from './pages/screens/student/dashboard/dashboard';
-import BreakageView from './pages/screens/student/transactionView/breakageView';
-import BreakageCompletedView from './pages/screens/student/transactionView/breakageCompletedView';
+import Login from './components/login/Login';
+import BorrowingForm from './pages/student/borrowForm/BorrowingForm';
+import RequestConfirm from './pages/student/requestConfirm/RequestConfirm';
+import DashboardScreen from './pages/student/dashboard/dashboard';
+import BreakageView from './pages/student/breakageView/breakageView';
+import BreakageCompletedView from './pages/student/breakageView/breakageCompletedView';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ import TPendingView from './pages/screens/teacher/teacherPendingView/PendingView
 import TRejectedView from './pages/screens/teacher/teacherRejectedView/RejectedView';
 import TAcceptedView from './pages/screens/teacher/teacherAcceptedView/AcceptedView';
 
-import Transaction from './pages/screens/student/transactionView/Transaction';
+import Transaction from './pages/student/transactionView/Transaction';
 
 
 const queryClient = new QueryClient

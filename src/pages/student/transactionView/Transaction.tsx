@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import header from '../../../../components/assets/headerlogo.png'
+import header from '../../../assets/headerlogo.png'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 function Transaction() {

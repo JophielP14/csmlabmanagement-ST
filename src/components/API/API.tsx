@@ -5,7 +5,7 @@ import {
   RegisterType,
   ResetPasswordConfirmType,
   TransactionListType,
-} from "./Types";
+} from "../Types/Types";
 
 const instance = axios.create({
   baseURL: "http://localhost:8000/",
