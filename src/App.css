@@ -1142,27 +1142,14 @@ justify-content: space-between;
 align-items: center;
 }
 
-.viewStudentInfo{
-display: flex;
-flex-direction: row;
-align-items: center;
-margin: 15px 0px;
-}
-.iconProfileContainer{
-width: 27px;
-height: 27px;
-margin-right: 4px;
-}
+
 .iconProfileContainer svg{
 width: 100%;
 height: 100%;
 
 
 }
-.student-details{
-display: flex;
-flex-direction: column;
-}
+
 .student-Name{
 color: #000;
 font-size: 13px;
@@ -1178,15 +1165,7 @@ font-weight: 400;
 
 
 
-.viewTitleLabel{
-color: #1E1A4D;
 
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-margin-top: 15px;
-margin-bottom: 15px;
-}
 
 
 .viewItemsSelected{
@@ -1233,15 +1212,6 @@ display: flex;
 flex-direction: row;
 }
 
-.viewEachInfo{
-margin-top: 5px;
-display: flex;
-flex-direction: row;
-font-size: 12px;
-margin-bottom: 15px;
-color: hsla(0, 0%, 0%, 0.7)
-
-}
 .viewItemLeft{
 margin-top: 0px;
 display: flex;
@@ -1251,6 +1221,9 @@ margin-bottom: 15px;
 color: hsla(0, 0%, 0%, 0.7);
 
 }
+
+
+
 .viewEachBreakage{
 
 display: flex;
@@ -1261,15 +1234,8 @@ margin-bottom: 5px;
 
 align-items: center;
 }
-.totalQuantityLabel{
-display: flex;
-flex-direction: row;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-align-items: center;
-margin: 10px 0px 15px 0px;
-}
+
+
 .totalQuantityLabel span{
 color: #000;
 
@@ -1281,17 +1247,6 @@ font-weight: 700;
 margin-right: 10px;
 }
 
-.viewDateTime{
-
-display: flex;
-color: #8F8F8F;
-font-size: 10px;
-font-style: italic;
-font-weight: 400;
-line-height: normal;
-margin-top: 15px;
-flex-direction: column;
-}
 .viewDate{
 display: flex;
 justify-content: flex-end;
@@ -1566,6 +1521,16 @@ margin-right: 10px;
 
 
 /* Rewrite */
+.sideHeader {
+  display: flex;
+  padding: 0px 22px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+
+/* Transaction */
 .Container {
   display: flex;
   flex-direction: column;
@@ -1575,17 +1540,20 @@ margin-right: 10px;
 
   width: 100%;
   min-width: 360px;
-  height: 100vh;
+  height: 100%;
 
   gap: 20px;
 }
 
-.sideHeader {
+.viewStudentInfo{
   display: flex;
-  padding: 0px 22px;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  align-self: stretch;
+  margin: 15px 0px;
+}
+
+.studentDetails{
+  flex-direction: column;
 }
 
 .transBody {
@@ -1597,9 +1565,9 @@ margin-right: 10px;
   align-self: stretch;
 }
 
-.status{
+.transStatus{
   display: flex;
-  padding: 5px;
+  padding: 5px 20px;
   justify-content: flex-end;
   align-items: center;
   align-self: stretch;
@@ -1611,7 +1579,7 @@ margin-right: 10px;
 .receiptCont {
   background-color: white;
   display: flex;
-  padding: 10px;
+  padding: 10px 20px;
   flex-direction: column;
   align-self: stretch;
 
@@ -1636,6 +1604,13 @@ margin-right: 10px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-height: 24px;
+}
+
+.iconProfileContainer{
+  width: 50px;
+  height: 50px;
+  margin-right: 4px;
 }
 
 .borrowerLeftDetails {
@@ -1650,3 +1625,39 @@ margin-right: 10px;
   align-items: flex-start;
 }
 
+
+.viewEachInfo {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  margin-bottom: 10px;
+  gap: 20px;
+  
+}
+
+.viewTitleLabel{
+  color: #1E1A4D;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.totalQuantityLabel{
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: 400;
+  align-items: center;
+}
+
+.viewDateTime{
+
+  display: flex;
+  align-self: flex-end;
+  color: grey;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 15px;
+  flex-direction: column;
+  }

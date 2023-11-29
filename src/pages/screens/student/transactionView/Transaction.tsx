@@ -13,11 +13,39 @@ function Transaction() {
 
   const receiptContent = {
     id: "1000",
-    itemsBorrowed: "glass",
-    status: "Pending",
+    status: "Completed",
     date: "10/14/23",
-    // Add other properties as needed
+    time: "10:59AM",
+    instructor: "Jerilyn Yare",
+    subject: "Chemistry",
+    items: [
+      { name: "Petri Dishes", quantity: 3, breakage: 1 },
+      { name: "Graduated Cylinder", quantity: 6, breakage: 3 },
+      { name: "Volumetric Flask", quantity: 2, breakage: 1 },
+    ],
   };
+
+  const approver = {
+    teacher: [{ idNumber: "2055060541", name: "Ms. Jerilyn Yare" }],
+    labtech: [{ idNumber: "2565322123", name: "Prince Kurt Laurence" }],
+  };
+
+  const membersDetails = [
+    {
+      idNumber: 2018542654,
+      Name: "Joel Morongot",
+    },
+    {
+      idNumber: 2020100768,
+      Name: "Joel Morongot",
+    },
+    {
+      idNumber: 2020100768,
+      Name: "Trissa Saman Asali Mulan Yee",
+    },
+  ];
+
+  
 
   let backgroundColor = "";
   let buttons = null;
@@ -36,7 +64,8 @@ function Transaction() {
       break;
 
     case "On Borrow":
-      backgroundColor = "green";
+      backgroundColor = "#D9FFD8";
+      color = "#00360C";
       buttons = <button>Return</button>;
       break;
 
@@ -46,41 +75,19 @@ function Transaction() {
       break;
 
     case "Completed":
-      backgroundColor = "green";
+      backgroundColor = "#D9FFD8";
+      color = "#00360C";
       buttons = <button>Done view</button>;
+      break;
+    
+    case "Rejected":
+      backgroundColor = "#FFE9E9";
+      color = "#360000";
       break;
 
     default:
       break;
   }
-
-  const membersDetails = [
-    {
-      idNumber: 2018542654,
-      Name: "Joel Morongot",
-    },
-    {
-      idNumber: 2020100768,
-      Name: "Joel Morongot",
-    },
-    {
-      idNumber: 2020100768,
-      Name: "Trissa Saman Asali Mulan Yee",
-    },
-  ];
-
-  const instructor = [
-    {
-      idNumber: 2055060541,
-      Name: "Ms. Jerilyn Yare",
-    },
-  ];
-
-  const labtech = [
-    {
-      Name: "Prince Kurt Laurence",
-    },
-  ];
 
   return (
     <div className="Container">
@@ -92,7 +99,7 @@ function Transaction() {
       </div>
 
       <div className="transBody">
-        <div className="status" style={{ backgroundColor, color }}>
+        <div className="transStatus" style={{ backgroundColor, color }}>
           <p>
             Status: <b>{receiptContent.status}</b>
           </p>
@@ -109,11 +116,21 @@ function Transaction() {
               <div className="iconProfileContainer">
                 <AccountCircleOutlinedIcon />
               </div>
-              <div className="student-details">
-                <p>{studentDetails.name}</p>
-                <p>
+              <div className="studentDetails">
+                <div
+                  style={{
+                    fontSize: "18px",
+                  }}
+                >
+                  <b>{studentDetails.name}</b>
+                </div>
+                <div
+                  style={{
+                    fontSize: "14px",
+                  }}
+                >
                   {studentDetails.idNumber}-{studentDetails.Dept}
-                </p>
+                </div>
               </div>
             </div>
             <div className="sectionContainer">
@@ -123,29 +140,89 @@ function Transaction() {
 
           {/* Members */}
           <div className="viewTitleLabel">Members </div>
-
           <div className="viewAfterLabel">
             {membersDetails.map((member, index) => (
               <div className="viewEachInfo" key={index}>
-                <div className="eachIndex">{index + 1}</div>
-                <div className="eachmemID">{member.idNumber}</div>
-                <div className="eachmemNAME">{member.Name}</div>
+                <div>{index + 1}</div>
+                <div>{member.idNumber}</div>
+                <div>{member.Name}</div>
               </div>
             ))}
           </div>
 
+          {/* Instructor */}
           <div className="viewTitleLabel"> Instructor </div>
-            <div className="viewAfterLabel">
-              <div className="viewEachInfo">Ms. Jerilyn Yare</div>
-            </div>
+          <div className="viewAfterLabel">
+            <div className="viewEachInfo">{receiptContent.instructor}</div>
+          </div>
 
+          {/* Subject */}
+          <div className="viewTitleLabel"> Subject </div>
+          <div className="viewAfterLabel">
+            <div className="viewEachInfo">{receiptContent.subject}</div>
+          </div>
+
+          {/* Item borrowed */}
+          <div className="viewTitleLabel"> Selected Items </div>
+          <div className="viewItemsSelected">
+            {receiptContent.items.map((selectedItems, index) => (
+              <div className="viewEachInfo" key={index}>
+                <div>{index + 1}</div>
+                <div>{selectedItems.name}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="totalQuantityLabel">
+            <p>
+              <b>Total Borrowed:</b> 10
+            </p>
+          </div>
+
+          {/* Approver */}
+          <div
+            className="viewTitleLabel"
+            style={{
+              marginTop: "30px",
+            }}
+          >
+            Approved by:
+          </div>
+          <div
+            className="viewAfterLabel"
+            style={{
+              color: "gray",
+            }}
+          >
+            {approver.teacher.map((instructor) => (
+              <div>
+                <ul>
+                  <li>
+                    Instructor: <b>{instructor.name}</b>
+                  </li>
+                </ul>
+              </div>
+            ))}
+            {approver.labtech.map((labtech) => (
+              <div>
+                <ul>
+                  <li>
+                    Labtech: <b>{labtech.name}</b>
+                  </li>
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Date issued */}
+          <div className="viewDateTime">
+            <div>{receiptContent.date}</div>
+            <div>{receiptContent.time}</div>
+          </div>
         </div>
-
-        <p>Items Borrowed: {receiptContent.itemsBorrowed}</p>
-        <p>Date: {receiptContent.date}</p>
-        {/* Add other receipt content properties as needed */}
       </div>
 
+      {/* Buttons with no function pa */}
       {buttons && <div>{buttons}</div>}
     </div>
   );

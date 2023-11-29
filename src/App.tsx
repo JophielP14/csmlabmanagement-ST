@@ -20,10 +20,8 @@ import Dashboard from './pages/screens/teacher/teacherDashboard/Dashboard';
 import TPendingView from './pages/screens/teacher/teacherPendingView/PendingView';
 import TRejectedView from './pages/screens/teacher/teacherRejectedView/RejectedView';
 import TAcceptedView from './pages/screens/teacher/teacherAcceptedView/AcceptedView';
+
 import Transaction from './pages/screens/student/transactionView/Transaction';
-
-
-
 
 
 const queryClient = new QueryClient
@@ -38,7 +36,7 @@ function App() {
       <Routes>
 
           {/* Student Views */}
-          <Route path="/" element={<Transaction />} />
+          <Route path="/" element={<Login />} />
           <Route path="/borrow-form" element={<BorrowingForm />} />
           <Route path='/request-confirm' element={<RequestConfirm />} />
 
