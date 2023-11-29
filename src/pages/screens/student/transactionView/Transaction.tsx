@@ -13,7 +13,7 @@ function Transaction() {
 
   const receiptContent = {
     id: "1000",
-    status: "Completed",
+    status: "Pending",
     date: "10/14/23",
     time: "10:59AM",
     instructor: "Jerilyn Yare",
@@ -70,7 +70,8 @@ function Transaction() {
       break;
 
     case "Pending Return":
-      backgroundColor = "yellow";
+      backgroundColor = "#FEFFCD";
+      color = "#D9A92E";
       // No button for Pending Return
       break;
 
