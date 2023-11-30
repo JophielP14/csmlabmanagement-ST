@@ -1,22 +1,21 @@
 import './App.css';
 
-import Login from './pages/screens/student/login/Login';
-import BorrowingForm from './pages/screens/student/borrowForm/BorrowingForm';
-import RequestConfirm from './pages/screens/student/requestConfirm/RequestConfirm';
-import DashboardScreen from './pages/screens/student/dashboard/dashboard';
-import BreakageView from './pages/screens/student/transactionView/breakageView';
-import BreakageCompletedView from './pages/screens/student/transactionView/breakageCompletedView';
+import Login from './components/login/Login';
+import BorrowingForm from './pages/student/borrowForm/BorrowingForm';
+import RequestConfirm from './pages/student/requestConfirm/RequestConfirm';
+import DashboardScreen from './pages/student/dashboard/dashboard';
+import BreakageView from './pages/student/breakageView/breakageView';
+import BreakageCompletedView from './pages/student/breakageView/breakageCompletedView';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import Dashboard from './pages/screens/teacher/teacherDashboard/Dashboard';
-import TPendingView from './pages/screens/teacher/teacherPendingView/PendingView';
-import TRejectedView from './pages/screens/teacher/teacherRejectedView/RejectedView';
-import TAcceptedView from './pages/screens/teacher/teacherAcceptedView/AcceptedView';
+import Dashboard from './pages/teacher/dashboard/Dashboard';
 
-import Transaction from './pages/screens/student/transactionView/Transaction';
+import STransaction from './pages/student/transactionView/Transaction';
+import TTransaction from './pages/teacher/transactionView/Transaction';
+
 
 
 const queryClient = new QueryClient
@@ -37,7 +36,7 @@ function App() {
 
           <Route path="/dashboard" element={<DashboardScreen />} />
 
-          <Route path="/Student/:status/Transaction/:id" element={<Transaction/>} />
+          <Route path="/Student/:status/Transaction/:id" element={<STransaction/>} />
 
           <Route path="/pending" element={<DashboardScreen />} />
           <Route path="/on-borrow" element={<DashboardScreen/>} />
@@ -54,9 +53,7 @@ function App() {
 
           {/* Teacher Views*/}
           <Route path="/Teacher/Dashboard" element={<Dashboard />} />
-          <Route path="/Teacher/transaction/:id" element={<TPendingView />} />
-          <Route path="/Teacher/transaction/rejected/:id" element={<TRejectedView />} />
-          <Route path="/Teacher/transaction/accepted/:id" element={<TAcceptedView />} />
+          <Route path="/Teacher/transaction/:id" element={<TTransaction />} />
 
       </Routes>
     </div>

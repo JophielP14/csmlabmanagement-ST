@@ -1,7 +1,7 @@
 import { useState } from "react";
-import headerLogo from "../../../../components/assets/headerlogo.png"
+import headerLogo from "../../assets/headerlogo.png"
 import { useNavigate } from "react-router-dom";
-import { LoginAPI } from "../../API";
+import { LoginAPI } from "../API/API";
 
 function Login() {
   const navigate = useNavigate();
