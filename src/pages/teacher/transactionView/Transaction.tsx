@@ -2,12 +2,8 @@ import { Link } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import header from '../../../assets/headerlogo.png'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { useState } from 'react';
 
-function STransaction() {
-
-  const [isChecked, setIsChecked] = useState(false);
-
+function TTransaction() {
   const studentDetails = {
     idNumber: 201854265,
     name: "Sofia Dara Alilin",
@@ -17,7 +13,7 @@ function STransaction() {
 
   const receiptContent = {
     id: "1000",
-    status: "On Borrow",
+    status: "Approved",
     date: "10/14/23",
     time: "10:59AM",
     instructor: "Jerilyn Yare",
@@ -49,30 +45,17 @@ function STransaction() {
     },
   ];
 
-  const DoneViewbtn = () => {
-    // Handle Done View logic
-    console.log('Done View clicked');
+  const Approvebtn = () => {
+    // Handle Approve logic
+    console.log('Approved clicked');
   };
 
-  const CancelRequestbtn = () => {
-    // Handle Cancel Request logic
-    console.log('Cancel Request clicked');
+  const Rejectbtn = () => {
+    // Handle Reject logic
+    console.log('Reject clicked');
   };
 
-
-  const Returnbtn = () => {
-    if (isChecked) {
-      // Handle Return logic when checkbox is checked
-      console.log('Return clicked');
-    } else {
-      // Optionally, provide feedback that checkbox needs to be checked
-      console.log('Please check the checkbox before returning.');
-    }
-  };
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
+  
 
   let backgroundColor = "";
   let buttons = null;
@@ -84,63 +67,21 @@ function STransaction() {
       color = "#D9A92E";
       buttons = (
         <>
-          <button
-            onClick={DoneViewbtn}
+          <button onClick={Approvebtn}
             className="bigButton"
-            style={{ backgroundColor: "#C8ECB8" }}
-          >
-            Done view
-          </button>
-          <button
-            onClick={CancelRequestbtn}
+            style={{ backgroundColor: "#C8ECB8" }}>Approved</button>
+          <button onClick={Rejectbtn}
             className="bigButton"
-            style={{ backgroundColor: "#ECC4B8" }}
-          >
-            Cancel request
-          </button>
+            style={{ backgroundColor: "#ECC4B8" }}>Reject</button>
         </>
       );
       break;
 
-    case "On Borrow":
+    case "Approved":
       backgroundColor = "#D9FFD8";
       color = "#00360C";
-      buttons = (
-        <>
-          {receiptContent.status === "On Borrow" && (
-            <label>
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
-              I certify that the above item(s) wil be <b>returned</b> in good condition.
-            </label>
-          )}
-          <button
-            onClick={Returnbtn}
-            className="bigButton"
-            style={{ backgroundColor: "#C8ECB8" }}
-            disabled={!isChecked}
-          >
-            Return
-          </button>
-        </>
-      );
       break;
-
-    case "Pending Return":
-      backgroundColor = "#FEFFCD";
-      color = "#D9A92E";
-      // No button for Pending Return
-      break;
-
-    case "Completed":
-      backgroundColor = "#D9FFD8";
-      color = "#00360C";
-      buttons = <button onClick={DoneViewbtn}>Done view</button>;
-      break;
-
+    
     case "Rejected":
       backgroundColor = "#FFE9E9";
       color = "#360000";
@@ -149,7 +90,6 @@ function STransaction() {
     default:
       break;
   }
-
 
   return (
     <div className="Container">
@@ -290,4 +230,4 @@ function STransaction() {
   );
 }
 
-export default STransaction;
+export default TTransaction;
