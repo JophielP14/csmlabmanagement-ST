@@ -2,8 +2,12 @@ import { Link } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import header from '../../../assets/headerlogo.png'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { useState } from 'react';
 
-function Transaction() {
+function STransaction() {
+
+  const [isChecked, setIsChecked] = useState(false);
+
   const studentDetails = {
     idNumber: 201854265,
     name: "Sofia Dara Alilin",
@@ -13,7 +17,7 @@ function Transaction() {
 
   const receiptContent = {
     id: "1000",
-    status: "Pending",
+    status: "On Borrow",
     date: "10/14/23",
     time: "10:59AM",
     instructor: "Jerilyn Yare",
@@ -45,7 +49,30 @@ function Transaction() {
     },
   ];
 
-  
+  const handleDoneView = () => {
+    // Handle Done View logic
+    console.log('Done View clicked');
+  };
+
+  const handleCancelRequest = () => {
+    // Handle Cancel Request logic
+    console.log('Cancel Request clicked');
+  };
+
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleReturn = () => {
+    if (isChecked) {
+      // Handle Return logic when checkbox is checked
+      console.log('Return clicked');
+    } else {
+      // Optionally, provide feedback that checkbox needs to be checked
+      console.log('Please check the checkbox before returning.');
+    }
+  };
 
   let backgroundColor = "";
   let buttons = null;
@@ -57,8 +84,20 @@ function Transaction() {
       color = "#D9A92E";
       buttons = (
         <>
-          <button>Done view</button>
-          <button>Cancel request</button>
+          <button
+            onClick={handleDoneView}
+            className="bigButton"
+            style={{ backgroundColor: "#C8ECB8" }}
+          >
+            Done view
+          </button>
+          <button
+            onClick={handleCancelRequest}
+            className="bigButton"
+            style={{ backgroundColor: "#ECC4B8" }}
+          >
+            Cancel request
+          </button>
         </>
       );
       break;
@@ -66,7 +105,28 @@ function Transaction() {
     case "On Borrow":
       backgroundColor = "#D9FFD8";
       color = "#00360C";
-      buttons = <button>Return</button>;
+      buttons = (
+        <>
+          {receiptContent.status === "On Borrow" && (
+            <label>
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              I certify that the above item(s) wil be <b>returned</b> in good condition.
+            </label>
+          )}
+          <button
+            onClick={handleReturn}
+            className="bigButton"
+            style={{ backgroundColor: "#C8ECB8" }}
+            disabled={!isChecked}
+          >
+            Return
+          </button>
+        </>
+      );
       break;
 
     case "Pending Return":
@@ -78,9 +138,9 @@ function Transaction() {
     case "Completed":
       backgroundColor = "#D9FFD8";
       color = "#00360C";
-      buttons = <button>Done view</button>;
+      buttons = <button onClick={handleDoneView}>Done view</button>;
       break;
-    
+
     case "Rejected":
       backgroundColor = "#FFE9E9";
       color = "#360000";
@@ -89,6 +149,7 @@ function Transaction() {
     default:
       break;
   }
+
 
   return (
     <div className="Container">
@@ -224,9 +285,9 @@ function Transaction() {
       </div>
 
       {/* Buttons with no function pa */}
-      {buttons && <div>{buttons}</div>}
+      {buttons && <div className="buttonsCont">{buttons}</div>}
     </div>
   );
 }
 
-export default Transaction;
+export default STransaction;
