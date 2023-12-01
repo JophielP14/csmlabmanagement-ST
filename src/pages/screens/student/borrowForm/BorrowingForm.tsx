@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, MouseEvent, useEffect, FormEvent } from 'react';
+import { useState, ChangeEvent, MouseEvent, useEffect, FormEvent } from 'react';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import HeaderLogo from "../../../../components/assets/headerlogo.png";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -24,12 +24,22 @@ interface TableItem {
 }
 
 function BorrowingForm() {
-  const tempdatahead: string[] = ["Item No.", "Description", "Action"];
+
+  // temporary datas
+  
   const tempdata: [string, string, string][] = [
     ["001", "Beaker", "Delete"],
     ["002", "Test Tube", "Delete"],
     ["003", "Glass", "Delete"],
     ["004", "Bowl", "Delete"],
+  ];
+
+  const tempcourse: [string][] = [
+    ["BS Chemistry"],
+    ["BS Science Education"],
+    ["BS Environmental Science"],
+    ["BS Food Technlogy"],
+    ["BS Physics"],
   ];
 
   const tempteacher: [string][] = [
@@ -39,7 +49,7 @@ function BorrowingForm() {
     ["Dela Pena, Prince Kurt Lawrence"],
   ];
 
-  const tempcourse: [string][] = [
+  const tempsubs: [string][] = [
     ["Chemistry"],
     ["Physical Chemistry"],
     ["Microbiology"],
@@ -47,6 +57,8 @@ function BorrowingForm() {
     ["Physics 1"],
   ];
   const tempsection: [string][] = [["CHEM-1H1"], ["CHEM-1H2"], ["ENVISCI-1N1"]];
+
+  //removing and adding borrower functions
 
   const [borrowers, setBorrowers] = useState<Borrower[]>([
     { id: 1, studentId: "" },
@@ -68,14 +80,13 @@ function BorrowingForm() {
     }
   };
 
+  // For equipment search and adding to table functions
+
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [searchResults, setSearchResults] = useState<
     [string, string, string][]
   >([]);
-  const [selectedItem, setSelectedItem] = useState<
-    [string, string, number, string] | null
-  >(null);
-  const [quantity, setQuantity] = useState<number>(0);
+
   const [tableData, setTableData] = useState<TableItem[]>([]);
   const [showSuggestionBox, setShowSuggestionBox] = useState(false);
   const [isInputFocused, setInputFocused] = useState(false);
@@ -122,6 +133,8 @@ function BorrowingForm() {
       setTableData([...tableData, newItem]);
     }
   };
+
+  // para ni ma remove ang item nga gi add sa table
 
   const handleRemoveItem = (index: number) => {
     setTableData((prevTableData) => {
@@ -173,17 +186,7 @@ function BorrowingForm() {
     }
   };
 
-  // for select
 
-  const [selectedValue, setSelectedValue] = useState<string | undefined>(
-    undefined
-  );
-
-  const handleSelectChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setSelectedValue(event.target.value as string);
-  };
-
-  // ... (rest of your component)
 
   return (
     <div className="pageBody">
@@ -229,13 +232,30 @@ function BorrowingForm() {
               <div>
                 <label>Course</label>
               </div>
-              <div>
-                <OutlinedInput
-                  className="firstfield"
-                  placeholder="Course"
-                  required
-                />
-              </div>
+              <div className="drop">
+                  <FormControl variant="outlined" className="selectform secondfield" >
+                    <Select
+                      labelId="demo-simple-select-outlined-label"
+                      id="demo-simple-select-outlined"
+                      displayEmpty
+                      inputProps={{ "aria-label": "Without label" }}
+                      style={{  backgroundColor: "white",}}
+                    >
+                      <MenuItem
+                        value={undefined}
+                        disabled
+                        style={{ color: "gray" }}
+                      >
+                        Course
+                      </MenuItem>
+                      {tempcourse.map((course, index) => (
+                        <MenuItem key={index} value={course[0]}>
+                          {course[0]}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </div>
             </div>
             <div className="secondFormContainer">
               <div className="labelContain">
@@ -259,7 +279,6 @@ function BorrowingForm() {
                     </MenuItem>
                     {tempsection.map((section, index) => (
                       <MenuItem
-                        className="whatever2"
                         key={index}
                         value={section[0]}
                       >
@@ -311,9 +330,9 @@ function BorrowingForm() {
                       >
                         Subject
                       </MenuItem>
-                      {tempcourse.map((course, index) => (
-                        <MenuItem key={index} value={course[0]}>
-                          {course[0]}
+                      {tempsubs.map((subject, index) => (
+                        <MenuItem key={index} value={subject[0]}>
+                          {subject[0]}
                         </MenuItem>
                       ))}
                     </Select>
