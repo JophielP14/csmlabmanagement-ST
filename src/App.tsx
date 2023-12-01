@@ -15,6 +15,7 @@ import Dashboard from './pages/teacher/dashboard/Dashboard';
 
 import STransaction from './pages/student/transactionView/Transaction';
 import TTransaction from './pages/teacher/transactionView/Transaction';
+import RegistrationForm from './components/register/Registration';
 
 
 
@@ -31,6 +32,7 @@ function App() {
 
           {/* Student Views */}
           <Route path="/" element={<Login />} />
+          <Route path='/registration' element={<RegistrationForm />} />
           <Route path="/borrow-form" element={<BorrowingForm />} />
           <Route path='/request-confirm' element={<RequestConfirm />} />
 
