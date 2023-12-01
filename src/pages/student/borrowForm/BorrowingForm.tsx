@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, MouseEvent, useEffect, FormEvent } from 'react';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import HeaderLogo from "../../../../components/assets/headerlogo.png";
+import HeaderLogo from "../../../assets/headerlogo.png";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";

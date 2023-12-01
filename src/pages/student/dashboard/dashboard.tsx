@@ -1,4 +1,4 @@
-import header from "../../../../components/assets/headerlogo.png";
+import header from "../../../assets/headerlogo.png";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import FlashOffIcon from "@mui/icons-material/FlashOff";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import { TransactionsAPI } from "../../API";
+import { TransactionsAPI } from "../../../components/API/API";
 import { useQuery } from "@tanstack/react-query";
-import { TransactionType } from "../../Types";
+import { TransactionType } from "../../../components/Types/Types";
 
 function DashboardScreen() {
   const [selectedStatus, setselectedStatus] = useState("pending");
