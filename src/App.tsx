@@ -1,6 +1,6 @@
 import './App.css';
 
-import Login from './components/login/Login';
+import Login from './pages/Login/Login';
 import BorrowingForm from './pages/student/borrowForm/BorrowingForm';
 import RequestConfirm from './pages/student/requestConfirm/RequestConfirm';
 import DashboardScreen from './pages/student/dashboard/dashboard';
@@ -13,9 +13,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Dashboard from './pages/teacher/dashboard/Dashboard';
 
-import STransaction from './pages/student/transactionView/Transaction';
-import TTransaction from './pages/teacher/transactionView/Transaction';
-import RegistrationForm from './components/register/Registration';
+import Transaction from './pages/TransactionView/Transaction';
+import RegistrationForm from './pages/Register/Registration';
 
 
 
@@ -38,8 +37,6 @@ function App() {
 
           <Route path="/dashboard" element={<DashboardScreen />} />
 
-          <Route path="/Student/:status/Transaction/:id" element={<STransaction/>} />
-
           <Route path="/pending" element={<DashboardScreen />} />
           <Route path="/on-borrow" element={<DashboardScreen/>} />
           <Route path="/returning" element={<DashboardScreen/>} />
@@ -55,7 +52,9 @@ function App() {
 
           {/* Teacher Views*/}
           <Route path="/Teacher/Dashboard" element={<Dashboard />} />
-          <Route path="/Teacher/transaction/:id" element={<TTransaction />} />
+
+          {/* Global View */}
+          <Route path="/Teacher/transaction/:id" element={<Transaction />} />
 
       </Routes>
     </div>
