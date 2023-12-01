@@ -1,6 +1,6 @@
 import { useState } from "react";
 import headerLogo from "../../assets/headerlogo.png"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginAPI } from "../API/API";
 
 function Login() {
@@ -55,8 +55,9 @@ function Login() {
       </button>
 
       <p>{error}</p>
-      
-      <div className="forgotPassword">Forgot Password?</div>
+      <Link to={"/forgot-password"} >
+        <div className="forgotPassword">Forgot Password?</div>
+      </Link>
     </div>
   );
 }
