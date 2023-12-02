@@ -55,9 +55,15 @@ function Login() {
       </button>
 
       <p>{error}</p>
+<<<<<<< HEAD
       <Link to={"/forgot-password"} >
         <div className="forgotPassword">Forgot Password?</div>
       </Link>
+=======
+      
+      <div className="forgotPassword">Forgot Password?</div>
+      <div className='toLoginPage'><p>Don't have an account? <span><Link to='/registration'><a className='toLogin'>Register</a></Link></span></p></div>
+>>>>>>> main
     </div>
   );
 }
