@@ -542,24 +542,26 @@ justify-content: center;
 .DashboardContent{
 margin-left: 10px;
 margin-right: 10px;
-
+background-color: #F2FAF4;
+width: 100%;
 }
 
 
-@media screen and (min-width: 900px){
-.DashboardContent{
-  width: 900px;
-  
-  margin: 0 auto;
+@media screen and (min-width: 900px) {
+  .DashboardContent {
+    width: 900px;
 
+    margin: 0 auto;
+  }
 }
+
 
 .viewContent{
   width: 900px;
   height: 570px;
   margin: 0 auto;
 }
-}
+
 .firstContent{
  display: flex;
  flex-direction: row;
@@ -569,6 +571,7 @@ margin-right: 10px;
  justify-content: space-between;
  margin-top: 10px;
 }
+
 .leftlabel{
 
 display: flex;
@@ -613,7 +616,11 @@ flex-direction: column;
 width: 46px;
 height: 37px;
 justify-content: flex-end;
+background: none;
+border: none;
+
 }
+
 .logoutIcon{
 margin: 0px;
 height: 12px;
@@ -633,15 +640,16 @@ D-2C*/
 
 
 .dashboardLabel{
-color: #1B4D1A;
-margin-left: 20px;
-margin-right: 20px;
-margin-top: 10px;
-font-size: 17px;
-font-style: normal;
-font-weight: 700;
-padding-bottom: 5px;
-border-bottom: 2px solid #1B4D1A;
+  color: #1B4D1A;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border-bottom: 2px solid #1B4D1A;
+  padding-bottom: 8px;
+  align-self: stretch;
+  margin: 0px 26px;
 }
 /* 
 D-3C */
@@ -651,12 +659,8 @@ margin-right: 20px;
 
 border-radius: 10px;
 background: #CDF;
-
-margin-top: 20px;
 color: #25639D;
 text-align: center;
-font-size: 11px;
-font-style: normal;
 font-weight: 700;
 padding: 15px 38px;
 display: flex;
@@ -664,6 +668,7 @@ justify-content: center;
 
 
 }
+
 
 /* D-4C */
 
@@ -678,6 +683,7 @@ margin-top: 25px;
 margin-bottom: 25px;
 
 overflow-x: scroll;
+overflow: hidden;
 
 }
 
@@ -691,7 +697,6 @@ height: 75px;
 padding: 4px 6px;
 flex-direction: column;
 border: none;
-font-size: 11px;
 align-items: center;          
 border-radius: 10px;
 color: hsla(119, 50%, 20%, 1);
@@ -1197,13 +1202,12 @@ flex-direction: column;
 
 }
 
-.firstRow {
+.firstRow-profile-logout {
 display: flex;
-width: 307px;
-padding: 5px 0px;
 align-items: center;
+align-self: stretch;
+padding: 5px 26px;
 justify-content: space-between;
-width: 100%;
 }
 
 .viewAfterLabel{
@@ -1559,6 +1563,7 @@ margin-right: 10px;
 
   width: 100%;
   min-width: 360px;
+  min-height: 100vh;
   height: 100%;
 
   gap: 20px;
@@ -1705,3 +1710,19 @@ margin-right: 10px;
   width: 100%;
 }
 
+.navborrow {
+  width: 100%;
+}
+
+.studteNavigation {
+  padding: 5px 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  overflow-x: scroll;
+  overflow: hidden;
+}

@@ -17,7 +17,7 @@ function Transaction() {
 
   const receiptContent = {
     id: "1000",
-    status: "Pending",
+    status: "On Borrow",
     date: "10/14/23",
     time: "10:59AM",
     instructor: "Jerilyn Yare",
@@ -86,7 +86,7 @@ function Transaction() {
   
 
   function DecisionButtons() {
-    const isStudent = false; // Replace with your actual logic to determine if the user is a student
+    const isStudent = true; // Replace with your actual logic to determine if the user is a student
   
     if (!isStudent && receiptContent.status === "Pending") {
       return (
@@ -188,7 +188,23 @@ function Transaction() {
       color = "#D9A92E";
       break;
 
-    case "Approved":
+      case "On Borrow":
+        backgroundColor = "#D9FFD8";
+        color = "#00360C";
+        break;
+
+    case "Rejected":
+      backgroundColor = "#FFE9E9";
+      color = "#360000";
+      break;
+
+      case "Pending Return":
+      backgroundColor = "#FEFFCD";
+      color = "#D9A92E";
+      // No button for Pending Return
+      break;
+
+    case "Completed":
       backgroundColor = "#D9FFD8";
       color = "#00360C";
       break;
