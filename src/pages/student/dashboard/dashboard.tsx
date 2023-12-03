@@ -7,51 +7,78 @@ import BackHandOutlinedIcon from "@mui/icons-material/BackHandOutlined";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import FlashOffIcon from "@mui/icons-material/FlashOff";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import { TransactionsAPI } from "../../../components/API/API";
+import {
+  TransactionsAPI,
+  setAccessToken,
+  setRefreshToken,
+} from "../../../components/API/API";
 import { useQuery } from "@tanstack/react-query";
 import { TransactionType } from "../../../components/Types/Types";
+import { useDispatch, useSelector } from "react-redux";
+import { auth_toggle } from "../../../components/Redux/Slices/AuthSlice/AuthSlice";
+import { toast } from "react-toastify";
+import { RootState } from "../../../components/Redux/Store/Store";
 
 function DashboardScreen() {
   const [selectedStatus, setselectedStatus] = useState("pending");
-
+  const logged_in_user = useSelector((state: RootState) => state.user.user);
   const handleStatusClick = (status: string) => {
     console.log("Clicked status:", status);
     setselectedStatus(status);
   };
-  
+
   const transactions = useQuery({
     queryKey: ["transactions"],
     queryFn: TransactionsAPI,
   });
-  
-  
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div className="DashboardContent">
       <div className="logocontainerD">
         <img src={header} alt="Header Logo" className="mainlogoD" />
       </div>
-
       <div className="firstContent">
+        <p>{JSON.stringify(logged_in_user)}</p>
         <div className="leftlabel">
           <div className="iconContainer">
             <AccountCircleIcon />
           </div>
           <div className="leftlabelstudent">
-            <div className="idNumber">2017100196</div>
+            <div className="idNumber">{logged_in_user.username}</div>
             <div className="status">
               Status: <span>Cleared</span>
             </div>
           </div>
         </div>
-        <Link to="/" className="rightlabel">
+        <button
+          className="rightlabel"
+          onClick={async () => {
+            navigate("/");
+            await setAccessToken("");
+            await setRefreshToken("");
+            await dispatch(auth_toggle());
+            toast("Logged out", {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          }}
+        >
           <LogoutIcon className="logoutIcon" />
           <div className="rightText"> Logout </div>
-        </Link>
+        </button>
       </div>
 
       <div className="dashboardLabel">Dashboard</div>
@@ -63,8 +90,7 @@ function DashboardScreen() {
       {/* 4 buttons */}
 
       <div className="buttonsView">
-        <Link
-          to="/pending"
+        <button
           className={`buttonItemsStatus ${
             selectedStatus === "Pending" ? "button-active" : ""
           }`}
@@ -74,10 +100,9 @@ function DashboardScreen() {
             <HourglassBottomTwoToneIcon />
           </div>
           <div className="buttonName">Pending</div>
-        </Link>
+        </button>
 
-        <Link
-          to="/on-borrow"
+        <button
           className={`buttonItemsStatus ${
             selectedStatus === "Approved" ? "button-active" : ""
           }`}
@@ -87,23 +112,21 @@ function DashboardScreen() {
             <ThumbUpOutlinedIcon />
           </div>
           <div className="buttonName">On-Borrow</div>
-        </Link>
+        </button>
 
-        <Link
-          to="/returning"
+        <button
           className={`buttonItemsStatus ${
             selectedStatus === "Returning" ? "button-active" : ""
           }`}
           onClick={() => handleStatusClick("Returning")}
-        > 
+        >
           <div className="iconStatus">
             <BackHandOutlinedIcon />
           </div>
           <div className="buttonName">Pending Return </div>
-        </Link>
+        </button>
 
-        <Link
-          to="/returned"
+        <button
           className={`buttonItemsStatus ${
             selectedStatus === "Completed" ? "button-active" : ""
           }`}
@@ -113,10 +136,9 @@ function DashboardScreen() {
             <CheckCircleIcon />
           </div>
           <div className="buttonName">Returned</div>
-        </Link>
+        </button>
 
-        <Link
-          to="/breakage"
+        <button
           className={`buttonItemsStatus ${
             selectedStatus === "Breakage" ? "button-active" : ""
           }`}
@@ -126,10 +148,9 @@ function DashboardScreen() {
             <FlashOffIcon />
           </div>
           <div className="buttonName">Breakage</div>
-        </Link>
+        </button>
 
-        <Link
-          to="/rejected"
+        <button
           className={`buttonItemsStatus ${
             selectedStatus === "Rejected" ? "button-active" : ""
           }`}
@@ -139,7 +160,7 @@ function DashboardScreen() {
             <ThumbDownIcon />
           </div>
           <div className="buttonName">Rejected</div>
-        </Link>
+        </button>
       </div>
       {transactions.data && selectedStatus === "Pending" ? (
         <p>Pending Transactions</p>
@@ -182,9 +203,7 @@ function DashboardScreen() {
         ) : (
           <></>
         )}
-
-
-    </div>
+      </div>
     </div>
   );
 }
