@@ -1,9 +1,9 @@
 import "./App.css";
 
 import Login from "./pages/Login/Login";
+import Transaction from "./pages/TransactionView/Transaction";
 import BorrowingForm from "./pages/student/borrowForm/BorrowingForm";
 import RequestConfirm from "./pages/student/requestConfirm/RequestConfirm";
-import DashboardScreen from "./pages/student/dashboard/dashboard";
 import BreakageView from "./pages/student/breakageView/breakageView";
 import BreakageCompletedView from "./pages/student/breakageView/breakageCompletedView";
 
@@ -11,12 +11,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import Transaction from "./pages/TransactionView/Transaction";
-
 import Store from "./components/Redux/Store/Store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import Revalidator from "./components/Revalidator/Revalidator";
+
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -61,7 +61,7 @@ function App() {
               element={
                 <>
                   <Revalidator />
-                  <DashboardScreen />
+                  <Dashboard />
                 </>
               }
             />
