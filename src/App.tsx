@@ -15,7 +15,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Store from "./components/Redux/Store/Store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
+
 import Revalidator from "./components/Revalidator/Revalidator";
+import Dashboard from "./pages/teacher/dashboard/Dashboard";
+import RegistrationForm from "./pages/Register/Registration";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +38,7 @@ function App() {
                 </>
               }
             />
+            <Route path='/registration' element={<RegistrationForm />} />
             <Route
               path="/borrow-form"
               element={
@@ -100,7 +104,7 @@ function App() {
               element={
                 <>
                   <Revalidator />
-                  <BreakageCompletedView />
+                  <Dashboard />
                 </>
               }
             />
