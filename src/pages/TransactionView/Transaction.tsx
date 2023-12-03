@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import header from '../../../assets/headerlogo.png'
+import header from '../../assets/headerlogo.png'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { useState } from 'react';
 
-function STransaction() {
+function Transaction() {
 
   const [isChecked, setIsChecked] = useState(false);
 
@@ -17,7 +17,7 @@ function STransaction() {
 
   const receiptContent = {
     id: "1000",
-    status: "On Borrow",
+    status: "Pending",
     date: "10/14/23",
     time: "10:59AM",
     instructor: "Jerilyn Yare",
@@ -59,6 +59,9 @@ function STransaction() {
     console.log('Cancel Request clicked');
   };
 
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   const Returnbtn = () => {
     if (isChecked) {
@@ -70,75 +73,124 @@ function STransaction() {
     }
   };
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+  const Approvebtn = () => {
+    // Handle Approve logic
+    console.log('Approved clicked');
   };
 
+  const Rejectbtn = () => {
+    // Handle Reject logic
+    console.log('Reject clicked');
+  };
+
+  
+
+  function DecisionButtons() {
+    const isStudent = false; // Replace with your actual logic to determine if the user is a student
+  
+    if (!isStudent && receiptContent.status === "Pending") {
+      return (
+        <div className="buttonsCont">
+          <button
+            onClick={Approvebtn}
+            className="bigButton"
+            style={{ backgroundColor: "#C8ECB8" }}
+          >
+            Approved
+          </button>
+          <button
+            onClick={Rejectbtn}
+            className="bigButton"
+            style={{ backgroundColor: "#ECC4B8" }}
+          >
+            Reject
+          </button>
+        </div>
+      );
+    }
+  
+    if (isStudent) {
+      if (receiptContent.status === "Pending") {
+        return (
+          <div className="buttonsCont">
+            <button
+              onClick={DoneViewbtn}
+              className="bigButton"
+              style={{ backgroundColor: "#C8ECB8" }}
+            >
+              Done view
+            </button>
+            <button
+              onClick={CancelRequestbtn}
+              className="bigButton"
+              style={{ backgroundColor: "#ECC4B8" }}
+            >
+              Cancel request
+            </button>
+          </div>
+        );
+      }
+  
+      if (receiptContent.status === "On Borrow") {
+        return (
+          <div className="buttonsCont">
+            {receiptContent.status === "On Borrow" && (
+              <label>
+                <input
+                  type="checkbox"
+                  checked={isChecked}
+                  onChange={handleCheckboxChange}
+                />
+                I certify that the above item(s) wil be <b>returned</b> in good condition.
+              </label>
+            )}
+            <button
+              onClick={Returnbtn}
+              className="bigButton"
+              style={{ backgroundColor: "#C8ECB8" }}
+              disabled={!isChecked}
+            >
+              Return
+            </button>
+          </div>
+        );
+      }
+  
+      if (receiptContent.status === "Completed") {
+        return (
+          <div className="buttonsCont">
+            <button
+              onClick={DoneViewbtn}
+              className="bigButton"
+            >
+              Done view
+            </button>
+          </div>
+        );
+      }
+  
+      if (receiptContent.status === "Rejected") {
+        // Handle logic for Rejected status (if needed)
+        return <></>;
+      }
+    }
+
+
+    return <></>;
+  }
+
   let backgroundColor = "";
-  let buttons = null;
   let color = "";
 
   switch (receiptContent.status) {
     case "Pending":
       backgroundColor = "#FEFFCD";
       color = "#D9A92E";
-      buttons = (
-        <>
-          <button
-            onClick={DoneViewbtn}
-            className="bigButton"
-            style={{ backgroundColor: "#C8ECB8" }}
-          >
-            Done view
-          </button>
-          <button
-            onClick={CancelRequestbtn}
-            className="bigButton"
-            style={{ backgroundColor: "#ECC4B8" }}
-          >
-            Cancel request
-          </button>
-        </>
-      );
       break;
 
-    case "On Borrow":
+    case "Approved":
       backgroundColor = "#D9FFD8";
       color = "#00360C";
-      buttons = (
-        <>
-          {receiptContent.status === "On Borrow" && (
-            <label>
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
-              I certify that the above item(s) wil be <b>returned</b> in good condition.
-            </label>
-          )}
-          <button
-            onClick={Returnbtn}
-            className="bigButton"
-            style={{ backgroundColor: "#C8ECB8" }}
-            disabled={!isChecked}
-          >
-            Return
-          </button>
-        </>
-      );
-      break;
-
-    case "Pending Return":
-      backgroundColor = "#FEFFCD";
-      color = "#D9A92E";
-      // No button for Pending Return
-      break;
-
-    case "Completed":
-      backgroundColor = "#D9FFD8";
-      color = "#00360C";
-      buttons = <button onClick={DoneViewbtn}>Done view</button>;
       break;
 
     case "Rejected":
@@ -149,7 +201,6 @@ function STransaction() {
     default:
       break;
   }
-
 
   return (
     <div className="Container">
@@ -285,9 +336,9 @@ function STransaction() {
       </div>
 
       {/* Buttons with no function pa */}
-      {buttons && <div className="buttonsCont">{buttons}</div>}
+      <DecisionButtons />
     </div>
   );
 }
 
-export default STransaction;
+export default Transaction;
