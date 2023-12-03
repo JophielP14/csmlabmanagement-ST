@@ -8,7 +8,7 @@ import {
 } from "../Types/Types";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8000/",
+  baseURL: "https://csm-backend.keannu1.duckdns.org/",
 });
 
 // Token Handling

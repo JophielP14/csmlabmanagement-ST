@@ -13,7 +13,7 @@ function Login() {
     username: "",
     password: "",
   });
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   
   return (
     <div className="teacherContainer">
@@ -51,10 +51,10 @@ function Login() {
           if (status === true) {
             const user_info = await UserAPI();
             if (user_info) {
-              //dispatch(setUserSlice(user_info));
+              dispatch(setUserSlice(user_info));
             }
 
-            //dispatch(auth_toggle());
+            dispatch(auth_toggle());
             navigate("/dashboard");
           } else {
             setError("Invalid login");

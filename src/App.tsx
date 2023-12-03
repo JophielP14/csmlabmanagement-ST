@@ -1,67 +1,124 @@
-import './App.css';
+import "./App.css";
 
-import Login from './pages/Login/Login';
-import BorrowingForm from './pages/student/borrowForm/BorrowingForm';
-import RequestConfirm from './pages/student/requestConfirm/RequestConfirm';
-import DashboardScreen from './pages/student/dashboard/dashboard';
-import BreakageView from './pages/student/breakageView/breakageView';
-import BreakageCompletedView from './pages/student/breakageView/breakageCompletedView';
+import Login from "./pages/Login/Login";
+import BorrowingForm from "./pages/student/borrowForm/BorrowingForm";
+import RequestConfirm from "./pages/student/requestConfirm/RequestConfirm";
+import DashboardScreen from "./pages/student/dashboard/dashboard";
+import BreakageView from "./pages/student/breakageView/breakageView";
+import BreakageCompletedView from "./pages/student/breakageView/breakageCompletedView";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import Dashboard from './pages/teacher/dashboard/Dashboard';
+import Transaction from "./pages/TransactionView/Transaction";
 
-import Transaction from './pages/TransactionView/Transaction';
-import RegistrationForm from './pages/Register/Registration';
+import Store from "./components/Redux/Store/Store";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import Revalidator from "./components/Revalidator/Revalidator";
 
-
-
-const queryClient = new QueryClient
-
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-    <Router>
-    <div className="App">
-      
-      <Routes>
+    <Provider store={Store}>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <Routes>
+            {/* Student Views */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <Revalidator />
+                  <Login />
+                </>
+              }
+            />
+            <Route
+              path="/borrow-form"
+              element={
 
-          {/* Student Views */}
-          <Route path="/" element={<Login />} />
-          <Route path='/registration' element={<RegistrationForm />} />
-          <Route path="/borrow-form" element={<BorrowingForm />} />
-          <Route path='/request-confirm' element={<RequestConfirm />} />
+                <>
+                  <Revalidator />
+                  <BorrowingForm />
+                </>
+              }
+            />
+            <Route
+              path="/request-confirm"
+              element={
+                <>
+                  <Revalidator />
+                  <RequestConfirm />
+                </>
+              }
+            />
 
-          <Route path="/dashboard" element={<DashboardScreen />} />
+            <Route
+              path="/dashboard"
+              element={
+                <>
+                  <Revalidator />
+                  <DashboardScreen />
+                </>
+              }
+            />
 
-          <Route path="/pending" element={<DashboardScreen />} />
-          <Route path="/on-borrow" element={<DashboardScreen/>} />
-          <Route path="/returning" element={<DashboardScreen/>} />
-          <Route path="/returned" element={<DashboardScreen/>} />
-          <Route path="/completed" element={<DashboardScreen/>} />
-          <Route path="/breakage" element={<DashboardScreen/>} />
-          <Route path="/rejected" element={<DashboardScreen/>} />
+            <Route
+              path="/Student/:status/Transaction/:id"
+              element={
+                <>
+                  <Revalidator />
+                  <Transaction />
+                </>
+              }
+            />
 
+            <Route
+              path="/Breakage/view/:id"
+              element={
+                <>
+                  <Revalidator />
+                  <BreakageView />
+                </>
+              }
+            />
+            <Route
+              path="/Resolved/view/:id"
+              element={
+                <>
+                  <Revalidator />
+                  <BreakageCompletedView />
+                </>
+              }
+            />
 
-          <Route path="/Breakage/view/:id" element={<BreakageView/>} />
-          <Route path="/Resolved/view/:id" element={<BreakageCompletedView/>} />
-
-
-          {/* Teacher Views*/}
-          <Route path="/Teacher/Dashboard" element={<Dashboard />} />
-
-          {/* Global View */}
-          <Route path="/Teacher/transaction/:id" element={<Transaction />} />
-
-      </Routes>
-    </div>
-
-    </Router>
-    </QueryClientProvider> 
+            {/* Teacher Views*/}
+            <Route
+              path="/Teacher/Dashboard"
+              element={
+                <>
+                  <Revalidator />
+                  <BreakageCompletedView />
+                </>
+              }
+            />
+          </Routes>
+        </Router>
+      </QueryClientProvider>
+      <ToastContainer
+        position={"top-right"}
+        autoClose={1500}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme={"light"}
+        limit={3}
+      />
+    </Provider>
   );
 }
 
-export default App 
+export default App;

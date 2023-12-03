@@ -544,6 +544,8 @@ margin-left: 10px;
 margin-right: 10px;
 
 }
+
+
 @media screen and (min-width: 900px){
 .DashboardContent{
   width: 900px;
@@ -551,6 +553,7 @@ margin-right: 10px;
   margin: 0 auto;
 
 }
+
 .viewContent{
   width: 900px;
   height: 570px;
