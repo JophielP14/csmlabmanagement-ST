@@ -69,9 +69,7 @@ function Dashboard() {
   return (
     <div className="viewDashboard">
       <div className="Header">
-        <div className="logocont">
-          <img src={Slogocsm} className="SLogocsm" />
-        </div>
+        <DashboardHeader/>
         <div className="firstContent">
           <p>{JSON.stringify(logged_in_user)}</p>
           <div className="leftlabel">
