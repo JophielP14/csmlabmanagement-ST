@@ -1,8 +1,3 @@
-import Slogocsm from "../../assets/headerlogo.png";
-import WatchLaterIcon from "@mui/icons-material/WatchLater";
-import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
-import header from "../../../assets/headerlogo.png";
-
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
 import HourglassBottomTwoToneIcon from "@mui/icons-material/HourglassBottomTwoTone";
@@ -27,33 +22,14 @@ import { toast } from "react-toastify";
 import { RootState } from "../../components/Redux/Store/Store";
 import { DashboardHeader } from "../../components/Headers/Headers";
 
-interface Transaction {
-  id: number;
-  timestamp: string;
-  time: string;
-  status: string;
-  section: string;
-}
 
-const [selectedStatus, setselectedStatus] = useState("pending");
-const logged_in_user = useSelector((state: RootState) => state.user.user);
+function Dashboard() {
+  const [selectedStatus, setselectedStatus] = useState("Pending");
+  const logged_in_user = useSelector((state: RootState) => state.user.user);
+
   const handleStatusClick = (status: string) => {
     console.log("Clicked status:", status);
     setselectedStatus(status);
-  };
-
-function Dashboard() {
-  const [selectedItem, setSelectedItem] = useState("Pending");
-  const [selectedSection, setSelectedSection] = useState<string>("All");
-  
-
-
-  const handleButtonClick = (item: string) => {
-    setSelectedItem(item);
-  };
-
-  const handleSectionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedSection(event.target.value);
   };
 
   const transactions = useQuery({
@@ -64,104 +40,206 @@ function Dashboard() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const allSections = Array.from(new Set(["CHEM1H1", "CHEM1H2", "CHEM1H3"]));
+  function BorrowButton() {
+    const isStudent = true;
 
-  return (
-    <div className="viewDashboard">
-      <div className="Header">
-        <DashboardHeader/>
-        <div className="firstContent">
-          <p>{JSON.stringify(logged_in_user)}</p>
-          <div className="leftlabel">
-            <div className="iconContainer">
-              <AccountCircleIcon />
-            </div>
-            <div className="leftlabelstudent">
-              <div className="idNumber">{logged_in_user.username}</div>
-              <div className="status">
-                Status: <span>Cleared</span>
+    if (isStudent) {
+      return (
+        <div className="navborrow">
+          <Link to="/borrow-form" className="borrowItemsButton">
+            Click to Request Borrow Items
+          </Link>
+
+          <div className="studteNavigation">
+            <button
+              className={`buttonItemsStatus ${
+                selectedStatus === "Pending" ? "button-active" : ""
+              }`}
+              onClick={() => handleStatusClick("Pending")}
+            >
+              <div className="iconStatus">
+                <HourglassBottomTwoToneIcon />
               </div>
-            </div>
+              <div className="buttonName">Pending</div>
+            </button>
+
+            <button
+              className={`buttonItemsStatus ${
+                selectedStatus === "Approved" ? "button-active" : ""
+              }`}
+              onClick={() => handleStatusClick("Approved")}
+            >
+              <div className="iconStatus">
+                <ThumbUpOutlinedIcon />
+              </div>
+              <div className="buttonName">On Borrow</div>
+            </button>
+
+            <button
+              className={`buttonItemsStatus ${
+                selectedStatus === "Returning" ? "button-active" : ""
+              }`}
+              onClick={() => handleStatusClick("Returning")}
+            >
+              <div className="iconStatus">
+                <BackHandOutlinedIcon />
+              </div>
+              <div className="buttonName">Pending Return </div>
+            </button>
+
+            <button
+              className={`buttonItemsStatus ${
+                selectedStatus === "Completed" ? "button-active" : ""
+              }`}
+              onClick={() => handleStatusClick("Completed")}
+            >
+              <div className="iconStatus">
+                <CheckCircleIcon />
+              </div>
+              <div className="buttonName">Returned</div>
+            </button>
+
+            <button
+              className={`buttonItemsStatus ${
+                selectedStatus === "Breakage" ? "button-active" : ""
+              }`}
+              onClick={() => handleStatusClick("Breakage")}
+            >
+              <div className="iconStatus">
+                <FlashOffIcon />
+              </div>
+              <div className="buttonName">Breakage</div>
+            </button>
+
+            <button
+              className={`buttonItemsStatus ${
+                selectedStatus === "Rejected" ? "button-active" : ""
+              }`}
+              onClick={() => handleStatusClick("Rejected")}
+            >
+              <div className="iconStatus">
+                <ThumbDownIcon />
+              </div>
+              <div className="buttonName">Rejected</div>
+            </button>
           </div>
+        </div>
+      );
+    }
+
+    if (!isStudent) {
+      return (
+        <div className="studteNavigation">
           <button
-            className="rightlabel"
-            onClick={async () => {
-              navigate("/");
-              await setAccessToken("");
-              await setRefreshToken("");
-              await dispatch(auth_toggle());
-              toast("Logged out", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-              });
-            }}
+            className={`buttonItemsStatus ${
+              selectedStatus === "Pending" ? "button-active" : ""
+            }`}
+            onClick={() => handleStatusClick("Pending")}
           >
-            <LogoutIcon className="logoutIcon" />
-            <div className="rightText"> Logout </div>
+            <div className="iconStatus">
+              <HourglassBottomTwoToneIcon />
+            </div>
+            <div className="buttonName">Pending</div>
+          </button>
+
+          <button
+            className={`buttonItemsStatus ${
+              selectedStatus === "Rejected" ? "button-active" : ""
+            }`}
+            onClick={() => handleStatusClick("Rejected")}
+          >
+            <div className="iconStatus">
+              <ThumbUpOutlinedIcon />
+            </div>
+            <div className="buttonName">Rejected</div>
           </button>
         </div>
-        <div className="secondRow">Hi! Jerilyn Yare</div>
-      </div>
-      <div className="navigation">
-        <Link
-          to="/Teacher/Dashboard"
-          className={`buttonCont ${
-            selectedItem === "Pending" ? "button-active" : ""
-          }`}
-          onClick={() => handleButtonClick("Pending")}
-        >
-          <div className="navLogo">
-            <HourglassBottomIcon />
-          </div>
-          <div className="navLabel">Pending</div>
-        </Link>
+      );
+    }
+    return <></>;
+  }
 
-        <Link
-          to="/Teacher/Dashboard"
-          className={`buttonCont ${
-            selectedItem === "Rejected" ? "button-active" : ""
-          }`}
-          onClick={() => handleButtonClick("Rejected")}
-        >
-          <div className="navLogo">
-            <WatchLaterIcon />
-          </div>
-          <div className="navLabel">Rejected</div>
-        </Link>
-      </div>
+  return (
+    <div className="Container">
+      <DashboardHeader />
 
-      {/* Dropdown filter */}
-      <div className="dropdown">
-        <div className="sectionFilterLabelCont">
-          <label htmlFor="sectionFilterLabel">Filter by: </label>
+      <div className="firstRow-profile-logout">
+        {/* <p>{JSON.stringify(logged_in_user)}</p> */}
+        <div className="leftlabel">
+          <div className="iconContainer">
+            <AccountCircleIcon />
+          </div>
+          <div className="leftlabelstudent">
+            <div className="idNumber">{logged_in_user.username}</div>
+          </div>
         </div>
-        <select
-          id="sectionFilter"
-          onChange={handleSectionChange}
-          value={selectedSection}
+        <button
+          className="rightlabel"
+          onClick={async () => {
+            navigate("/");
+            await setAccessToken("");
+            await setRefreshToken("");
+            await dispatch(auth_toggle());
+            toast("Logged out", {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          }}
         >
-          <option value="All">All Sections</option>
-          {allSections.map((section) => (
-            <option key={section} value={section}>
-              {section}
-            </option>
-          ))}
-        </select>
+          <LogoutIcon className="logoutIcon" />
+          <div className="rightText"> Logout </div>
+        </button>
       </div>
-      {transactions.data && selectedItem === "Pending" ? (
+
+      <div className="dashboardLabel">Dashboard</div>
+
+      <BorrowButton />
+
+      {transactions.data && selectedStatus === "Pending" ? (
         <p>Pending Transactions</p>
       ) : (
         <></>
       )}
+
+      {transactions.data && selectedStatus === "Approved" ? (
+        <p>On-borrow Transactions</p>
+      ) : (
+        <></>
+      )}
+
+      {transactions.data && selectedStatus === "Returning" ? (
+        <p>Pending Return Transactions</p>
+      ) : (
+        <></>
+      )}
+
+      {transactions.data && selectedStatus === "Completed" ? (
+        <p>Returned Transactions</p>
+      ) : (
+        <></>
+      )}
+
+      {transactions.data && selectedStatus === "Breakage" ? (
+        <p>Breakages List</p>
+      ) : (
+        <></>
+      )}
+
+      {transactions.data && selectedStatus === "Rejected" ? (
+        <p>Rejected Transactions</p>
+      ) : (
+        <></>
+      )}
+
       {/* Transaction list */}
       <div className="transList">
-        {transactions.data && selectedItem === "Pending" ? (
+        {transactions.data && selectedStatus === "Pending" ? (
           transactions.data
             .filter(
               (transaction: TransactionType) => transaction.status === "PENDING"
@@ -195,12 +273,152 @@ function Dashboard() {
         ) : (
           <></>
         )}
-        {transactions.data && selectedItem === "Rejected" ? (
-          <p>Rejected Transactions</p>
+
+        {transactions.data && selectedStatus === "Approved" ? (
+          transactions.data
+            .filter(
+              (transaction: TransactionType) =>
+                transaction.status === "APPROVED"
+            )
+            .map((transaction: TransactionType) => (
+              <Link
+                key={transaction.id}
+                to={`/transaction/${transaction.id}`}
+                className="transactionContainer"
+              >
+                <div className="transFirstRow">
+                  <div className="transactionID">
+                    Transaction ID {transaction.id}
+                  </div>
+                  <div className="currentStatus">
+                    <div className="iconCurrentStatus">
+                      <CircleIcon />
+                    </div>
+                    <div className="penStatus">{transaction.status}</div>
+                  </div>
+                </div>
+                <div className="transSecondRow">
+                  <div className="timeanddate">
+                    <div>{transaction.timestamp}</div>
+                    <div>{transaction.timestamp}</div>
+                  </div>
+                </div>
+                <div className="transThirdRow">Tap to View</div>
+              </Link>
+            ))
         ) : (
           <></>
         )}
-        {transactions.data && selectedItem === "Rejected" ? (
+
+        {transactions.data && selectedStatus === "Returning" ? (
+          transactions.data
+            .filter(
+              (transaction: TransactionType) =>
+                transaction.status === "RETURNING"
+            )
+            .map((transaction: TransactionType) => (
+              <Link
+                key={transaction.id}
+                to={`/transaction/${transaction.id}`}
+                className="transactionContainer"
+              >
+                <div className="transFirstRow">
+                  <div className="transactionID">
+                    Transaction ID {transaction.id}
+                  </div>
+                  <div className="currentStatus">
+                    <div className="iconCurrentStatus">
+                      <CircleIcon />
+                    </div>
+                    <div className="penStatus">{transaction.status}</div>
+                  </div>
+                </div>
+                <div className="transSecondRow">
+                  <div className="timeanddate">
+                    <div>{transaction.timestamp}</div>
+                    <div>{transaction.timestamp}</div>
+                  </div>
+                </div>
+                <div className="transThirdRow">Tap to View</div>
+              </Link>
+            ))
+        ) : (
+          <></>
+        )}
+
+        {transactions.data && selectedStatus === "Completed" ? (
+          transactions.data
+            .filter(
+              (transaction: TransactionType) =>
+                transaction.status === "COMPLETED"
+            )
+            .map((transaction: TransactionType) => (
+              <Link
+                key={transaction.id}
+                to={`/transaction/${transaction.id}`}
+                className="transactionContainer"
+              >
+                <div className="transFirstRow">
+                  <div className="transactionID">
+                    Transaction ID {transaction.id}
+                  </div>
+                  <div className="currentStatus">
+                    <div className="iconCurrentStatus">
+                      <CircleIcon />
+                    </div>
+                    <div className="penStatus">{transaction.status}</div>
+                  </div>
+                </div>
+                <div className="transSecondRow">
+                  <div className="timeanddate">
+                    <div>{transaction.timestamp}</div>
+                    <div>{transaction.timestamp}</div>
+                  </div>
+                </div>
+                <div className="transThirdRow">Tap to View</div>
+              </Link>
+            ))
+        ) : (
+          <></>
+        )}
+
+        {transactions.data && selectedStatus === "Breakage" ? (
+          transactions.data
+            .filter(
+              (transaction: TransactionType) =>
+                transaction.status === "Breakage"
+            )
+            .map((transaction: TransactionType) => (
+              <Link
+                key={transaction.id}
+                to={`/transaction/${transaction.id}`}
+                className="transactionContainer"
+              >
+                <div className="transFirstRow">
+                  <div className="transactionID">
+                    Transaction ID {transaction.id}
+                  </div>
+                  <div className="currentStatus">
+                    <div className="iconCurrentStatus">
+                      <CircleIcon />
+                    </div>
+                    <div className="penStatus">{transaction.status}</div>
+                  </div>
+                </div>
+                <div className="transSecondRow">
+                  <div className="timeanddate">
+                    <div>{transaction.timestamp}</div>
+                    <div>{transaction.timestamp}</div>
+                  </div>
+                </div>
+                <div className="transThirdRow">Tap to View</div>
+              </Link>
+            ))
+        ) : (
+          <></>
+        )}
+
+        {transactions.data && selectedStatus === "Rejected" ? (
           transactions.data
             .filter(
               (transaction: TransactionType) =>
@@ -239,4 +457,5 @@ function Dashboard() {
     </div>
   );
 }
+
 export default Dashboard;
